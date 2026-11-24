@@ -127,8 +127,12 @@ export default function Sidebar({
       >
         <div className="flex h-[76px] shrink-0 items-center justify-between border-b border-white/10 px-4">
           <div className="flex min-w-0 items-center gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#6366F1]">
-              <GraduationCap size={23} />
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white overflow-hidden">
+              <img
+                src="/logo.png"
+                alt="ISST Logo"
+                className="h-full w-full object-contain"
+              />
             </div>
             <div className={collapsed ? "lg:hidden" : ""}>
               <div className="text-lg font-bold tracking-tight">ISST Admin</div>
@@ -160,7 +164,11 @@ export default function Sidebar({
             Icon: LayoutDashboard,
           })}
           {item({ path: "banners", label: "Banners", Icon: Image })}
-          {item({ path: "education-levels", label: "Education Levels", Icon: GraduationCap })}
+          {item({
+            path: "education-levels",
+            label: "Education Levels",
+            Icon: GraduationCap,
+          })}
           <div className="my-3 border-t border-white/10" />
           <button
             type="button"
