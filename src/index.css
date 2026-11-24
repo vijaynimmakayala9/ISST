@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body {
+    @apply bg-[#EEF2FF] text-[#312E81] antialiased;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}
+@layer components {
+  .field {
+    @apply block min-h-[44px] w-full min-w-0 rounded-xl border border-[#A5B4FC] bg-white px-4 py-2.5 text-sm text-[#312E81] shadow-sm outline-none transition duration-200 placeholder:text-slate-400 focus:border-[#6366F1] focus:ring-4 focus:ring-[#EEF2FF] disabled:cursor-not-allowed disabled:bg-slate-100;
+  }
+  .btn {
+    @apply inline-flex min-h-[42px] items-center justify-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#A5B4FC] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn border-[#4338CA] bg-[#4338CA] text-white shadow-sm hover:border-[#312E81] hover:bg-[#312E81];
+  }
+  .btn-secondary {
+    @apply btn border-[#A5B4FC] bg-white text-[#4338CA] shadow-sm hover:bg-[#EEF2FF];
+  }
+  .panel {
+    @apply min-w-0 rounded-2xl border border-[#A5B4FC]/60 bg-white p-4 shadow-sm sm:p-6;
+  }
+}
+
+/* Photographs stay local so the interface can render without external asset requests. */
+.section-hero {
+  @apply min-h-[160px] overflow-hidden rounded-3xl border border-indigo-900 bg-indigo-950 bg-cover bg-center p-5 text-white shadow-lg sm:h-[200px] sm:p-8;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(30, 27, 75, 0.98) 0%,
+      rgba(49, 46, 129, 0.86) 38%,
+      rgba(30, 27, 75, 0.28) 100%
+    ),
+    var(--section-photo);
+  background-size:
+    cover,
+    min(60%, 700px) auto;
+  background-repeat: no-repeat;
+  background-position:
+    center,
+    right center;
+}
+@media (max-width: 640px) {
+  .section-hero {
+    background-size: cover;
+  }
+}
+.sidebar-campus {
+  background:
+    linear-gradient(115deg, rgba(49, 46, 129, 0.78), rgba(49, 46, 129, 0.2)),
+    url("./assets/images/college-selection.webp") center 55% / cover;
+}
+.login-photo {
+  background:
+    linear-gradient(95deg, rgba(30, 27, 75, 0.76), rgba(49, 46, 129, 0.42)),
+    url("./assets/images/login.webp") center / cover;
+}
+.hero-dashboard {
+  --section-photo: url("./assets/images/dashboard.webp");
+}
+.hero-education-levels {
+  --section-photo: url("./assets/images/education-levels.webp");
+}
+.hero-skill-development {
+  --section-photo: url("./assets/images/skill-development.webp");
+}
+.hero-course-selection {
+  --section-photo: url("./assets/images/course-selection.webp");
+}
+.hero-career-route-map {
+  --section-photo: url("./assets/images/career-route-map.webp");
+}
+.hero-college-selection {
+  --section-photo: url("./assets/images/college-selection.webp");
+}
+.hero-scholarships {
+  --section-photo: url("./assets/images/scholarships.webp");
+}
+.hero-entrance-exams {
+  --section-photo: url("./assets/images/entrance-exams.webp");
+}
+.hero-education-loans {
+  --section-photo: url("./assets/images/education-loans.webp");
+}
+.hero-admissions {
+  --section-photo: url("./assets/images/admissions.webp");
+}
+.hero-placement-trainings {
+  --section-photo: url("./assets/images/placement-trainings.webp");
+}
+.hero-banners {
+  --section-photo: url("./assets/images/banners.webp");
+}
+.hero-scholarships-categories {
+  --section-photo: url("./assets/images/scholarships-categories.webp");
+}
+.hero-entrance-exams-categories {
+  --section-photo: url("./assets/images/entrance-exams-categories.webp");
+}
+.hero-education-loans-categories {
+  --section-photo: url("./assets/images/education-loans-categories.webp");
+}
+.hero-admissions-categories {
+  --section-photo: url("./assets/images/admissions-categories.webp");
+}
+.hero-placement-trainings-categories {
+  --section-photo: url("./assets/images/placement-trainings-categories.webp");
+}
+
+/* Record list tables share typography and responsive layout. */
+.record-table-frame {
+  @apply min-w-0 w-full overflow-x-auto rounded-2xl border border-indigo-100 bg-white shadow-sm;
+}
+.record-table {
+  @apply w-full min-w-[660px] border-collapse text-left text-sm text-slate-700;
+}
+.record-table thead {
+  @apply bg-[#EEF2FF] text-[#312E81];
+}
+.record-table th {
+  @apply whitespace-nowrap border-b border-indigo-200 px-4 py-3 text-xs font-bold;
+}
+.record-table td {
+  @apply border-b border-indigo-100 px-4 py-3 align-middle;
+  overflow-wrap: anywhere;
+}
+.record-table tbody tr:nth-child(even) {
+  @apply bg-slate-50/70;
+}
+.record-table tbody tr:hover,
+.record-table tbody tr:focus-within {
+  @apply bg-indigo-50;
+}
+.record-table tbody tr:last-child td {
+  @apply border-b-0;
+}
+.record-table .record-table-number {
+  @apply w-px whitespace-nowrap text-center tabular-nums;
+}
+.record-table-number span {
+  @apply inline-flex min-w-8 justify-center rounded-md bg-indigo-100 px-2 py-1 text-xs font-semibold text-indigo-800;
+}
+.record-table-primary {
+  @apply font-semibold text-slate-900;
+}
+.record-table-description {
+  @apply max-w-xs;
+}
+.record-table-summary {
+  @apply line-clamp-2;
+}
+.record-table-date {
+  @apply whitespace-nowrap;
+}
+.record-table th:last-child,
+.record-table-actions {
+  @apply text-right;
+}
+.record-table-actions > div {
+  @apply justify-end;
+}
+
+@media (max-width: 639px) {
+  .record-table-frame {
+    @apply overflow-visible rounded-none border-0 bg-transparent shadow-none;
+  }
+  .record-table,
+  .record-table tbody {
+    @apply block min-w-0;
+  }
+  .record-table thead {
+    @apply sr-only;
+  }
+  .record-table tbody {
+    @apply space-y-3;
+  }
+  .record-table tbody tr,
+  .record-table tbody tr:nth-child(even) {
+    @apply block rounded-xl border border-indigo-100 bg-white p-3 shadow-sm;
+  }
+  .record-table tbody td,
+  .record-table tbody tr:last-child td {
+    @apply grid w-full max-w-none gap-x-3 gap-y-1 whitespace-normal border-0 px-0 py-2 text-left;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+  }
+  .record-table tbody td::before {
+    content: attr(data-label);
+    @apply text-xs font-semibold leading-5 text-indigo-800;
+  }
+  .record-table tbody td > * {
+    @apply min-w-0;
+  }
+  .record-table-number span {
+    justify-self: start;
+  }
+  .record-table .record-table-summary {
+    @apply line-clamp-none;
+  }
+  .record-table tbody .record-table-actions {
+    @apply mt-1 border-t border-indigo-100 pt-3;
+  }
+  .record-table-actions > div {
+    @apply justify-start;
+  }
+  .record-table-actions button {
+    @apply min-h-10 min-w-10;
+  }
+}
