@@ -149,28 +149,494 @@ export default function AllAdmissions() {
   const selected = tab === "categories" ? categories : loading ? [] : rows;
   return (
     <div className="space-y-6">
-      <div
-        className={`section-hero ${tab === "categories" ? "hero-admissions-categories" : "hero-admissions"} flex flex-wrap justify-between items-end gap-3`}
-      >
-        <div>
-          <h1 className="text-3xl font-bold text-white">
+      <div className="relative isolate flex min-h-[200px] w-full items-center justify-between gap-6 overflow-hidden rounded-2xl bg-gradient-to-r from-[#312E81] via-[#4338CA] to-[#6366F1] px-5 py-6 text-white shadow-lg shadow-indigo-200 sm:px-8">
+        {/* Full Width SVG Background */}
+        <svg
+          className="pointer-events-none absolute inset-0 -z-10 h-full w-full"
+          viewBox="0 0 1440 240"
+          preserveAspectRatio="none"
+          fill="none"
+          aria-hidden="true"
+        >
+          {/* Top Wave */}
+          <path
+            d="M700 0C880 170 1080 -30 1440 70V0H700Z"
+            fill="#A5B4FC"
+            fillOpacity="0.15"
+          />
+
+          {/* Bottom Waves */}
+          <path
+            d="M450 240C700 60 950 280 1180 130C1300 55 1380 100 1440 80V240H450Z"
+            fill="#A5B4FC"
+            fillOpacity="0.16"
+          />
+
+          <path
+            d="M650 240C850 120 1050 260 1220 160C1330 100 1390 145 1440 125V240H650Z"
+            fill="#C7D2FE"
+            fillOpacity="0.15"
+          />
+
+          {/* Decorative Lines */}
+          <path
+            d="M750 0C850 180 1150 20 1440 110"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          <path
+            d="M650 240C850 80 1100 270 1440 120"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          {/* Decorative Circles */}
+          <circle
+            cx="1280"
+            cy="120"
+            r="110"
+            stroke="white"
+            strokeOpacity="0.1"
+          />
+
+          <circle cx="1280" cy="120" r="90" fill="white" fillOpacity="0.05" />
+
+          <circle cx="80" cy="20" r="130" fill="white" fillOpacity="0.025" />
+        </svg>
+
+        {/* Admissions Content */}
+        <div className="relative z-10 min-w-0 flex-1">
+          {/* Section Label */}
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5">
+            <span className="h-2 w-2 shrink-0 rounded-full bg-indigo-300" />
+
+            <span className="text-[11px] font-semibold uppercase tracking-widest text-indigo-100">
+              ISST · Admission Management
+            </span>
+          </div>
+
+          {/* Dynamic Heading */}
+          <h1 className="break-words text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
             {tab === "categories" ? "Admission Categories" : title}
           </h1>
-          <p className="mt-1 text-indigo-100">
+
+          {/* Dynamic Description */}
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-indigo-100 sm:text-base">
             {tab === "categories"
               ? "Create and organize categories."
               : `Manage ${title.toLowerCase()}.`}
           </p>
+
+          {/* Dynamic Add Button */}
+          <button
+            type="button"
+            onClick={() =>
+              setEditing({
+                category: tab === "categories",
+                item: null,
+              })
+            }
+            className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-[#4338CA] shadow-md transition-all duration-200 hover:bg-indigo-50 active:scale-95"
+          >
+            <Plus size={18} />
+
+            {tab === "categories" ? "Add category" : "Add admission"}
+          </button>
         </div>
-        <button
-          className="btn-primary"
-          onClick={() =>
-            setEditing({ category: tab === "categories", item: null })
-          }
-        >
-          <Plus size={17} />
-          {tab === "categories" ? "Add category" : "Add admission"}
-        </button>
+
+        {/* Dynamic SVG Illustration */}
+        <div className="pointer-events-none relative hidden w-[32%] max-w-[340px] shrink-0 items-center justify-center md:flex">
+          <svg
+            viewBox="0 0 340 220"
+            className="h-auto max-h-[190px] w-full"
+            fill="none"
+            aria-hidden="true"
+          >
+            {/* Background Rings */}
+            <circle
+              cx="175"
+              cy="110"
+              r="103"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+
+            <circle cx="175" cy="110" r="85" fill="white" fillOpacity="0.06" />
+
+            {tab === "categories" ? (
+              <>
+                {/* ===================================
+              ADMISSION CATEGORIES ILLUSTRATION
+          =================================== */}
+
+                {/* Rear Folder */}
+                <path
+                  d="M72 45H145L165 65H282Q294 65 294 77V173Q294 185 282 185H72Q60 185 60 173V57Q60 45 72 45Z"
+                  fill="#A5B4FC"
+                />
+
+                {/* Documents Inside Folder */}
+                <g transform="rotate(-8 130 100)">
+                  <rect
+                    x="85"
+                    y="24"
+                    width="100"
+                    height="135"
+                    rx="9"
+                    fill="#EEF2FF"
+                  />
+
+                  <path
+                    d="M101 43H168"
+                    stroke="#6366F1"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                  />
+
+                  <path
+                    d="M101 60H168M101 74H158M101 88H168"
+                    stroke="#A5B4FC"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+                </g>
+
+                {/* Second Document */}
+                <g transform="rotate(9 225 95)">
+                  <rect
+                    x="180"
+                    y="27"
+                    width="98"
+                    height="130"
+                    rx="9"
+                    fill="white"
+                  />
+
+                  <path
+                    d="M195 46H263"
+                    stroke="#6366F1"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                  />
+
+                  <path
+                    d="M195 63H263M195 77H251M195 91H263"
+                    stroke="#C7D2FE"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+                </g>
+
+                {/* Front Folder */}
+                <path
+                  d="M49 100Q50 89 63 89H291Q305 89 303 103L287 190Q285 201 272 201H70Q57 201 55 188L39 108Q38 100 49 100Z"
+                  fill="#C7D2FE"
+                />
+
+                {/* Folder Highlight */}
+                <path
+                  d="M53 106H289"
+                  stroke="#EEF2FF"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+
+                {/* Category Grid */}
+                <rect
+                  x="119"
+                  y="119"
+                  width="112"
+                  height="63"
+                  rx="12"
+                  fill="#EEF2FF"
+                />
+
+                {[
+                  [130, 129],
+                  [179, 129],
+                  [130, 153],
+                  [179, 153],
+                ].map(([x, y]) => (
+                  <g key={`${x}-${y}`}>
+                    <rect
+                      x={x}
+                      y={y}
+                      width="40"
+                      height="18"
+                      rx="5"
+                      fill="#818CF8"
+                    />
+
+                    <path
+                      d={`M${x + 9} ${y + 9}H${x + 31}`}
+                      stroke="white"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                  </g>
+                ))}
+
+                {/* Floating Category Card */}
+                <rect
+                  x="10"
+                  y="20"
+                  width="70"
+                  height="66"
+                  rx="14"
+                  fill="white"
+                />
+
+                {[
+                  [22, 32],
+                  [48, 32],
+                  [22, 58],
+                  [48, 58],
+                ].map(([x, y]) => (
+                  <rect
+                    key={`${x}-${y}`}
+                    x={x}
+                    y={y}
+                    width="19"
+                    height="19"
+                    rx="5"
+                    fill="#6366F1"
+                  />
+                ))}
+
+                {/* Floating Add Category Card */}
+                <rect
+                  x="264"
+                  y="142"
+                  width="65"
+                  height="65"
+                  rx="15"
+                  fill="white"
+                />
+
+                <circle cx="296.5" cy="174.5" r="22" fill="#E0E7FF" />
+
+                <path
+                  d="M296.5 162V187M284 174.5H309"
+                  stroke="#6366F1"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
+              </>
+            ) : (
+              <>
+                {/* ===================================
+              ADMISSIONS ILLUSTRATION
+          =================================== */}
+
+                {/* Application Form Shadow */}
+                <rect
+                  x="91"
+                  y="22"
+                  width="170"
+                  height="184"
+                  rx="15"
+                  fill="#312E81"
+                  fillOpacity="0.2"
+                  transform="rotate(8 176 114)"
+                />
+
+                {/* Application Clipboard */}
+                <rect
+                  x="77"
+                  y="23"
+                  width="175"
+                  height="184"
+                  rx="15"
+                  fill="#A5B4FC"
+                />
+
+                {/* Application Paper */}
+                <rect
+                  x="87"
+                  y="34"
+                  width="155"
+                  height="162"
+                  rx="10"
+                  fill="white"
+                />
+
+                {/* Clipboard Clip */}
+                <rect
+                  x="128"
+                  y="15"
+                  width="73"
+                  height="26"
+                  rx="8"
+                  fill="#6366F1"
+                />
+
+                <circle cx="164.5" cy="24" r="4" fill="#C7D2FE" />
+
+                {/* Student Profile */}
+                <circle cx="117" cy="66" r="17" fill="#E0E7FF" />
+
+                <circle cx="117" cy="61" r="6" fill="#818CF8" />
+
+                <path d="M105 77C105 63 129 63 129 77" fill="#818CF8" />
+
+                {/* Student Information */}
+                <path
+                  d="M145 61H220"
+                  stroke="#6366F1"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                />
+
+                <path
+                  d="M145 73H204"
+                  stroke="#A5B4FC"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
+
+                {/* Application Form Fields */}
+                {[94, 121, 148].map((y) => (
+                  <g key={y}>
+                    <rect
+                      x="101"
+                      y={y}
+                      width="128"
+                      height="21"
+                      rx="5"
+                      fill="#EEF2FF"
+                    />
+
+                    <rect
+                      x="108"
+                      y={y + 4}
+                      width="13"
+                      height="13"
+                      rx="3"
+                      fill="#C7D2FE"
+                    />
+
+                    <path
+                      d={`M111 ${y + 10}L114 ${y + 13}L119 ${y + 7}`}
+                      stroke="#4338CA"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+
+                    <path
+                      d={`M131 ${y + 10}H216`}
+                      stroke="#A5B4FC"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                    />
+                  </g>
+                ))}
+
+                {/* Signature Line */}
+                <path
+                  d="M103 183H155"
+                  stroke="#C7D2FE"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+
+                <path
+                  d="M165 184C174 166 182 192 191 177C199 168 208 185 222 174"
+                  stroke="#6366F1"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+
+                {/* Floating Graduation Cap Card */}
+                <rect
+                  x="10"
+                  y="18"
+                  width="83"
+                  height="65"
+                  rx="14"
+                  fill="white"
+                />
+
+                <path d="M21 42L51 27L81 42L51 57Z" fill="#6366F1" />
+
+                <path
+                  d="M32 48V61C42 71 60 71 70 61V48L51 57Z"
+                  fill="#4338CA"
+                />
+
+                <path
+                  d="M51 42L81 46V63"
+                  stroke="#FBBF24"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+
+                <path d="M81 59L76 70H86L81 59Z" fill="#FBBF24" />
+
+                {/* Floating Admission Approval Card */}
+                <rect
+                  x="245"
+                  y="124"
+                  width="83"
+                  height="83"
+                  rx="18"
+                  fill="white"
+                />
+
+                <circle cx="286.5" cy="165.5" r="29" fill="#DCFCE7" />
+
+                <circle cx="286.5" cy="165.5" r="21" fill="#22C55E" />
+
+                <path
+                  d="M275 165L283 174L299 157"
+                  stroke="white"
+                  strokeWidth="4.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+
+                {/* Floating Document Card */}
+                <rect
+                  x="260"
+                  y="14"
+                  width="62"
+                  height="75"
+                  rx="12"
+                  fill="white"
+                />
+
+                <path d="M273 27H293L309 43V75H273Z" fill="#C7D2FE" />
+
+                <path d="M293 27V43H309" fill="#818CF8" />
+
+                <path
+                  d="M281 53H301M281 61H301M281 69H295"
+                  stroke="#6366F1"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+              </>
+            )}
+
+            {/* Common Decorative Sparkles */}
+            <path
+              d="M110 10V24M103 17H117
+           M15 113V127M8 120H22
+           M320 99V113M313 106H327"
+              stroke="#C7D2FE"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            {/* Decorative Dots */}
+            <circle cx="216" cy="10" r="4" fill="#A5B4FC" />
+            <circle cx="25" cy="180" r="4" fill="#C7D2FE" />
+            <circle cx="317" cy="8" r="3" fill="#A5B4FC" />
+          </svg>
+        </div>
       </div>
       <div className="panel">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-5">

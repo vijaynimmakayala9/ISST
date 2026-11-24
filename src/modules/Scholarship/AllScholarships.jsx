@@ -120,28 +120,641 @@ export default function AllScholarships() {
   const selected = tab === "categories" ? categories : loading ? [] : rows;
   return (
     <div className="space-y-6">
-      <div
-        className={`section-hero ${tab === "categories" ? "hero-scholarships-categories" : "hero-scholarships"} flex flex-wrap justify-between items-end gap-3`}
-      >
-        <div>
-          <h1 className="text-3xl font-bold text-white">
+      <div className="relative isolate flex min-h-[200px] w-full items-center justify-between gap-6 overflow-hidden rounded-2xl bg-gradient-to-r from-[#312E81] via-[#4338CA] to-[#6366F1] px-5 py-6 text-white shadow-lg shadow-indigo-200 sm:px-8">
+        {/* Full Width SVG Background */}
+        <svg
+          className="pointer-events-none absolute inset-0 -z-10 h-full w-full"
+          viewBox="0 0 1440 240"
+          preserveAspectRatio="none"
+          fill="none"
+          aria-hidden="true"
+        >
+          {/* Top Wave */}
+          <path
+            d="M700 0C880 170 1080 -30 1440 70V0H700Z"
+            fill="#A5B4FC"
+            fillOpacity="0.15"
+          />
+
+          {/* Bottom Waves */}
+          <path
+            d="M450 240C700 60 950 280 1180 130C1300 55 1380 100 1440 80V240H450Z"
+            fill="#A5B4FC"
+            fillOpacity="0.16"
+          />
+
+          <path
+            d="M650 240C850 120 1050 260 1220 160C1330 100 1390 145 1440 125V240H650Z"
+            fill="#C7D2FE"
+            fillOpacity="0.15"
+          />
+
+          {/* Decorative Lines */}
+          <path
+            d="M750 0C850 180 1150 20 1440 110"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          <path
+            d="M650 240C850 80 1100 270 1440 120"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          {/* Decorative Circles */}
+          <circle
+            cx="1280"
+            cy="120"
+            r="110"
+            stroke="white"
+            strokeOpacity="0.1"
+          />
+
+          <circle cx="1280" cy="120" r="90" fill="white" fillOpacity="0.05" />
+
+          <circle cx="80" cy="20" r="130" fill="white" fillOpacity="0.025" />
+        </svg>
+
+        {/* Scholarship Content */}
+        <div className="relative z-10 min-w-0 flex-1">
+          {/* Section Label */}
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5">
+            <span className="h-2 w-2 shrink-0 rounded-full bg-indigo-300" />
+
+            <span className="text-[11px] font-semibold uppercase tracking-widest text-indigo-100">
+              ISST · Scholarship Management
+            </span>
+          </div>
+
+          {/* Dynamic Heading */}
+          <h1 className="break-words text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
             {tab === "categories" ? "Scholarship Categories" : title}
           </h1>
-          <p className="mt-1 text-indigo-100">
+
+          {/* Dynamic Description */}
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-indigo-100 sm:text-base">
             {tab === "categories"
               ? "Create and organize categories."
               : `Manage ${title.toLowerCase()}.`}
           </p>
+
+          {/* Dynamic Add Button */}
+          <button
+            type="button"
+            onClick={() =>
+              setEditing({
+                category: tab === "categories",
+                item: null,
+              })
+            }
+            className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-[#4338CA] shadow-md transition-all duration-200 hover:bg-indigo-50 active:scale-95"
+          >
+            <Plus size={18} />
+
+            {tab === "categories" ? "Add category" : "Add scholarship"}
+          </button>
         </div>
-        <button
-          className="btn-primary"
-          onClick={() =>
-            setEditing({ category: tab === "categories", item: null })
-          }
-        >
-          <Plus size={17} />
-          {tab === "categories" ? "Add category" : "Add scholarship"}
-        </button>
+
+        {/* Dynamic SVG Illustration */}
+        <div className="pointer-events-none relative hidden w-[32%] max-w-[340px] shrink-0 items-center justify-center md:flex">
+          <svg
+            viewBox="0 0 340 220"
+            className="h-auto max-h-[190px] w-full"
+            fill="none"
+            aria-hidden="true"
+          >
+            {/* Background Rings */}
+            <circle
+              cx="175"
+              cy="110"
+              r="103"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+
+            <circle cx="175" cy="110" r="85" fill="white" fillOpacity="0.06" />
+
+            {tab === "categories" ? (
+              <>
+                {/* =====================================
+              SCHOLARSHIP CATEGORIES ILLUSTRATION
+          ===================================== */}
+
+                {/* Rear Folder */}
+                <path
+                  d="M72 45H145L165 65H282Q294 65 294 77V173Q294 185 282 185H72Q60 185 60 173V57Q60 45 72 45Z"
+                  fill="#A5B4FC"
+                />
+
+                {/* Scholarship Document */}
+                <g transform="rotate(-9 130 100)">
+                  <rect
+                    x="80"
+                    y="24"
+                    width="105"
+                    height="140"
+                    rx="10"
+                    fill="#EEF2FF"
+                  />
+
+                  {/* Document Heading */}
+                  <path
+                    d="M95 42H169"
+                    stroke="#6366F1"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                  />
+
+                  {/* Document Content */}
+                  <path
+                    d="M95 61H169
+                 M95 75H155
+                 M95 89H169
+                 M95 103H148"
+                    stroke="#A5B4FC"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+
+                  {/* Scholarship Star */}
+                  <path
+                    d="M132 112L138 123L151 125L142 134L144 147L132 141L120 147L122 134L113 125L126 123Z"
+                    fill="#FBBF24"
+                  />
+                </g>
+
+                {/* Scholarship Certificate */}
+                <g transform="rotate(9 225 95)">
+                  <rect
+                    x="180"
+                    y="27"
+                    width="98"
+                    height="135"
+                    rx="10"
+                    fill="white"
+                  />
+
+                  <rect
+                    x="189"
+                    y="36"
+                    width="80"
+                    height="117"
+                    rx="6"
+                    stroke="#C7D2FE"
+                    strokeWidth="2"
+                  />
+
+                  <path
+                    d="M199 48H259"
+                    stroke="#6366F1"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                  />
+
+                  <path
+                    d="M199 64H259
+                 M199 78H249
+                 M199 92H259"
+                    stroke="#A5B4FC"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+
+                  {/* Certificate Ribbon */}
+                  <path
+                    d="M218 125L212 145L229 138L246 145L240 125Z"
+                    fill="#818CF8"
+                  />
+
+                  {/* Certificate Medal */}
+                  <circle cx="229" cy="119" r="17" fill="#6366F1" />
+
+                  <circle
+                    cx="229"
+                    cy="119"
+                    r="11"
+                    stroke="#C7D2FE"
+                    strokeWidth="2"
+                  />
+                </g>
+
+                {/* Front Folder */}
+                <path
+                  d="M49 100Q50 89 63 89H291Q305 89 303 103L287 190Q285 201 272 201H70Q57 201 55 188L39 108Q38 100 49 100Z"
+                  fill="#C7D2FE"
+                />
+
+                {/* Folder Highlight */}
+                <path
+                  d="M53 106H289"
+                  stroke="#EEF2FF"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+
+                {/* Category Grid Container */}
+                <rect
+                  x="109"
+                  y="117"
+                  width="125"
+                  height="66"
+                  rx="12"
+                  fill="#EEF2FF"
+                />
+
+                {/* Category Cards */}
+                {[
+                  [120, 127],
+                  [177, 127],
+                  [120, 153],
+                  [177, 153],
+                ].map(([x, y]) => (
+                  <g key={`${x}-${y}`}>
+                    <rect
+                      x={x}
+                      y={y}
+                      width="46"
+                      height="20"
+                      rx="5"
+                      fill="#818CF8"
+                    />
+
+                    <path
+                      d={`M${x + 10} ${y + 10}H${x + 36}`}
+                      stroke="white"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                  </g>
+                ))}
+
+                {/* Floating Category Icon */}
+                <rect
+                  x="10"
+                  y="17"
+                  width="70"
+                  height="66"
+                  rx="14"
+                  fill="white"
+                />
+
+                {[
+                  [22, 29],
+                  [48, 29],
+                  [22, 55],
+                  [48, 55],
+                ].map(([x, y]) => (
+                  <rect
+                    key={`${x}-${y}`}
+                    x={x}
+                    y={y}
+                    width="19"
+                    height="19"
+                    rx="5"
+                    fill="#6366F1"
+                  />
+                ))}
+
+                {/* Floating Scholarship Award Card */}
+                <rect
+                  x="257"
+                  y="135"
+                  width="72"
+                  height="72"
+                  rx="15"
+                  fill="white"
+                />
+
+                {/* Award Ribbon */}
+                <path
+                  d="M280 170L274 196L293 187L312 196L306 170Z"
+                  fill="#818CF8"
+                />
+
+                {/* Award Medal */}
+                <circle cx="293" cy="163" r="23" fill="#FBBF24" />
+
+                <circle
+                  cx="293"
+                  cy="163"
+                  r="18"
+                  stroke="#FDE68A"
+                  strokeWidth="2"
+                />
+
+                {/* Award Star */}
+                <path
+                  d="M293 149L297 158L307 159L300 166L302 176L293 171L284 176L286 166L279 159L289 158Z"
+                  fill="#FFF7D6"
+                />
+              </>
+            ) : (
+              <>
+                {/* =====================================
+              SCHOLARSHIPS ILLUSTRATION
+          ===================================== */}
+
+                {/* Scholarship Certificate */}
+                <g transform="rotate(10 260 105)">
+                  <rect
+                    x="207"
+                    y="22"
+                    width="111"
+                    height="158"
+                    rx="12"
+                    fill="white"
+                  />
+
+                  {/* Certificate Border */}
+                  <rect
+                    x="216"
+                    y="31"
+                    width="93"
+                    height="140"
+                    rx="7"
+                    stroke="#C7D2FE"
+                    strokeWidth="2"
+                  />
+
+                  {/* Certificate Heading */}
+                  <path
+                    d="M230 48H295"
+                    stroke="#6366F1"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                  />
+
+                  {/* Certificate Details */}
+                  <path
+                    d="M226 65H300
+                 M226 79H291
+                 M226 93H300
+                 M226 107H281"
+                    stroke="#A5B4FC"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+
+                  {/* Certificate Ribbon */}
+                  <path
+                    d="M251 139L245 162L263 154L281 162L275 139Z"
+                    fill="#818CF8"
+                  />
+
+                  <circle cx="263" cy="133" r="19" fill="#6366F1" />
+
+                  <circle
+                    cx="263"
+                    cy="133"
+                    r="13"
+                    stroke="#C7D2FE"
+                    strokeWidth="2"
+                  />
+
+                  <path
+                    d="M256 133L261 138L270 127"
+                    stroke="white"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </g>
+
+                {/* Trophy Shadow */}
+                <ellipse
+                  cx="143"
+                  cy="206"
+                  rx="111"
+                  ry="9"
+                  fill="#312E81"
+                  fillOpacity="0.2"
+                />
+
+                {/* Left Trophy Handle */}
+                <path
+                  d="M80 48H49V75C49 105 70 117 104 117"
+                  stroke="#FBBF24"
+                  strokeWidth="11"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+
+                {/* Right Trophy Handle */}
+                <path
+                  d="M202 48H233V75C233 105 212 117 178 117"
+                  stroke="#FBBF24"
+                  strokeWidth="11"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+
+                {/* Main Trophy Cup */}
+                <path
+                  d="M78 30H204V73
+               C204 113 178 141 141 141
+               C104 141 78 113 78 73Z"
+                  fill="#FBBF24"
+                />
+
+                {/* Trophy Upper Border */}
+                <rect
+                  x="72"
+                  y="25"
+                  width="138"
+                  height="14"
+                  rx="6"
+                  fill="#FDE68A"
+                />
+
+                {/* Trophy Highlight */}
+                <path
+                  d="M89 45H106V82
+               C106 102 117 118 132 127
+               C105 121 89 102 89 77Z"
+                  fill="#FDE68A"
+                />
+
+                {/* Trophy Star */}
+                <path
+                  d="M141 51
+               L152 73
+               L177 77
+               L159 95
+               L163 120
+               L141 108
+               L119 120
+               L123 95
+               L105 77
+               L130 73Z"
+                  fill="#FFF7D6"
+                />
+
+                {/* Trophy Stem */}
+                <rect
+                  x="129"
+                  y="135"
+                  width="24"
+                  height="37"
+                  rx="4"
+                  fill="#F59E0B"
+                />
+
+                {/* Trophy Bottom Support */}
+                <path
+                  d="M129 155H153
+               C153 167 164 171 177 175
+               V182H105V175
+               C118 171 129 167 129 155Z"
+                  fill="#FBBF24"
+                />
+
+                {/* Trophy Base */}
+                <rect
+                  x="88"
+                  y="178"
+                  width="106"
+                  height="25"
+                  rx="6"
+                  fill="#C7D2FE"
+                />
+
+                {/* Trophy Base Name Plate */}
+                <rect
+                  x="111"
+                  y="185"
+                  width="60"
+                  height="11"
+                  rx="3"
+                  fill="#6366F1"
+                />
+
+                <path
+                  d="M122 190.5H160"
+                  stroke="#E0E7FF"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+
+                {/* Floating Graduation Cap Card */}
+                <rect
+                  x="10"
+                  y="10"
+                  width="78"
+                  height="62"
+                  rx="14"
+                  fill="white"
+                />
+
+                {/* Graduation Cap */}
+                <path d="M19 32L49 17L79 32L49 47Z" fill="#6366F1" />
+
+                <path
+                  d="M30 38V51
+               C40 61 58 61 68 51
+               V38L49 47Z"
+                  fill="#4338CA"
+                />
+
+                {/* Graduation Tassel */}
+                <path
+                  d="M49 32L79 36V53"
+                  stroke="#FBBF24"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+
+                <path d="M79 49L74 61H84L79 49Z" fill="#FBBF24" />
+
+                {/* Rear Scholarship Coin */}
+                <circle
+                  cx="260"
+                  cy="180"
+                  r="27"
+                  fill="#F59E0B"
+                  stroke="#FDE68A"
+                  strokeWidth="4"
+                />
+
+                {/* Main Scholarship Coin */}
+                <circle
+                  cx="290"
+                  cy="163"
+                  r="37"
+                  fill="#FBBF24"
+                  stroke="#FDE68A"
+                  strokeWidth="5"
+                />
+
+                <circle
+                  cx="290"
+                  cy="163"
+                  r="27"
+                  stroke="#F59E0B"
+                  strokeWidth="2"
+                />
+
+                {/* Rupee Symbol Using SVG Paths */}
+                <path
+                  d="M276 147H304
+               M276 155H304
+               M276 147H286
+               C306 147 306 170 276 170
+               L300 184"
+                  stroke="#92400E"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+
+                {/* Floating Scholarship Success Card */}
+                <rect
+                  x="10"
+                  y="143"
+                  width="65"
+                  height="62"
+                  rx="13"
+                  fill="white"
+                />
+
+                <circle cx="42.5" cy="174" r="22" fill="#DCFCE7" />
+
+                <circle cx="42.5" cy="174" r="16" fill="#22C55E" />
+
+                <path
+                  d="M34 174L40 180L51 168"
+                  stroke="white"
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </>
+            )}
+
+            {/* Common Decorative Sparkles */}
+            <path
+              d="M108 12V26M101 19H115
+           M15 110V124M8 117H22
+           M320 94V108M313 101H327"
+              stroke="#C7D2FE"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            {/* Golden Decorative Stars */}
+            <path
+              d="M190 8L193 16L201 19L193 22L190 30L187 22L179 19L187 16Z"
+              fill="#FDE68A"
+            />
+
+            {/* Decorative Dots */}
+            <circle cx="215" cy="13" r="4" fill="#A5B4FC" />
+            <circle cx="20" cy="92" r="3" fill="#C7D2FE" />
+            <circle cx="329" cy="120" r="4" fill="#A5B4FC" />
+          </svg>
+        </div>
       </div>
       <div className="panel">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-5">

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import {
-  GraduationCap,
   LockKeyhole,
   Mail,
   Eye,
@@ -46,109 +45,135 @@ export default function Login() {
     }
   }
 
+  const fieldClass =
+    "w-full h-12 rounded-xl border border-indigo-200 bg-white/80 pl-11 text-sm text-slate-800 outline-none transition-all focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 placeholder:text-slate-400";
+
   return (
-    <div className="login-photo relative min-h-dvh w-full flex items-center overflow-hidden">
-      {/* Background Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-indigo-950/50 to-slate-950/20 pointer-events-none" />
+    <div
+      className="relative flex min-h-dvh w-full items-center overflow-hidden bg-[#EEF2FF] bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: "url('/login-bg.svg')",
+      }}
+    >
+      {/* Global Background Overlay */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/50 via-white/15 to-transparent"
+      />
+
+      {/* Left Side Overlay - Improves Text Visibility */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 left-0 hidden w-[68%] bg-gradient-to-r from-[#F8FAFF]/95 via-[#F8FAFF]/75 to-transparent lg:block"
+      />
 
       {/* Main Layout */}
-      <div className="relative z-10 w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12 px-5 sm:px-10 lg:px-[7vw] py-10">
+      <main className="relative z-10 mx-auto grid w-full max-w-[1600px] grid-cols-1 items-center gap-10 px-5 py-12 sm:px-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:px-[6vw] xl:gap-16">
         {/* ========================================
-            LEFT SIDE - EDUCATIONAL QUOTE
+            LEFT SIDE - EDUCATIONAL CONTENT
         ======================================== */}
-        <div className="hidden lg:flex flex-col justify-center text-white max-w-xl">
-          {/* Brand */}
-          <div className="flex items-center gap-4 mb-12">
-            <div className="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-md border border-white/25 flex items-center justify-center overflow-hidden">
+
+        <section className="hidden w-full min-w-0 max-w-[620px] flex-col self-center text-[#312E81] lg:flex">
+          {/* Branding */}
+          <div className="mb-8 flex items-center gap-4 xl:mb-10">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white bg-white shadow-md">
               <img
                 src="/logo.png"
                 alt="ISST Logo"
-                className="w-full h-full object-contain"
+                className="h-full w-full object-contain"
               />
             </div>
 
-            <div>
-              <h2 className="text-3xl font-extrabold tracking-wider">ISST</h2>
+            <div className="min-w-0">
+              <h2 className="text-3xl font-extrabold tracking-wide text-[#312E81]">
+                ISST
+              </h2>
 
-              <p className="text-xs text-indigo-200 tracking-widest uppercase mt-1">
+              <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-[#4338CA]">
                 Admin Workspace
               </p>
             </div>
           </div>
 
-          {/* Tagline */}
-          <div className="flex items-center gap-3 mb-6">
-            <span className="w-10 h-[2px] bg-indigo-300" />
+          {/* Educational Tagline */}
+          <div className="mb-4 flex items-center gap-3">
+            <span className="h-0.5 w-8 shrink-0 rounded-full bg-indigo-500" />
 
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-indigo-200">
+            <span className="text-[11px] font-bold uppercase leading-relaxed tracking-[0.14em] text-[#4338CA] xl:text-xs">
               Empowering Future Generations
             </span>
           </div>
 
           {/* Quote Icon */}
           <Quote
-            size={48}
-            strokeWidth={1.5}
-            className="text-indigo-300/80 mb-5"
+            size={36}
+            strokeWidth={1.7}
+            className="mb-3 text-[#6366F1]"
+            aria-hidden="true"
           />
 
-          {/* Main Quote */}
-          <h1 className="text-4xl xl:text-6xl font-extrabold leading-[1.2] tracking-tight">
-            Education today.
-            <span className="block mt-2 text-indigo-200">
+          {/* Main Heading */}
+          <h1 className="max-w-full break-words text-[clamp(1.875rem,2.85vw,3rem)] font-extrabold leading-[1.18] tracking-tight">
+            <span className="block text-[#312E81]">
+              Education today.
+            </span>
+
+            <span className="mt-2 block text-[#4338CA]">
               Empowerment tomorrow.
             </span>
           </h1>
 
-          {/* Quote Description */}
-          <p className="mt-7 text-base xl:text-lg leading-relaxed text-slate-200 max-w-lg">
-            Every great career begins with the right guidance, the right
-            knowledge, and the courage to dream beyond boundaries.
+          {/* Description */}
+          <p className="mt-5 max-w-[480px] text-[15px] font-medium leading-[1.8] text-slate-700 xl:text-base">
+            Every great career begins with the right guidance,
+            the right knowledge, and the courage to dream beyond
+            boundaries.
           </p>
 
-          {/* Divider */}
-          <div className="w-20 h-1 rounded-full bg-gradient-to-r from-indigo-300 to-blue-400 mt-8" />
+          {/* Gradient Divider */}
+          <div className="mt-6 h-1 w-20 rounded-full bg-gradient-to-r from-[#4338CA] to-[#818CF8]" />
 
           {/* Bottom Tagline */}
-          <div className="mt-8 flex items-center gap-4 text-sm font-medium text-indigo-100">
+          <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-semibold text-[#312E81]">
             <span>Learn.</span>
 
-            <span className="w-1.5 h-1.5 rounded-full bg-indigo-300" />
+            <span className="h-1.5 w-1.5 rounded-full bg-indigo-400" />
 
             <span>Explore.</span>
 
-            <span className="w-1.5 h-1.5 rounded-full bg-indigo-300" />
+            <span className="h-1.5 w-1.5 rounded-full bg-indigo-400" />
 
             <span>Achieve.</span>
           </div>
-        </div>
+        </section>
 
         {/* ========================================
             RIGHT SIDE - LOGIN FORM
         ======================================== */}
-        <div className="flex items-center justify-center lg:justify-end w-full">
-          <div className="w-full max-w-md bg-white/95 backdrop-blur-xl border border-white/80 shadow-2xl rounded-3xl p-6 sm:p-9">
+
+        <section className="flex w-full justify-center lg:justify-end">
+          <div className="w-full max-w-md rounded-[28px] border border-white bg-white/85 p-6 shadow-2xl shadow-indigo-900/15 backdrop-blur-xl sm:p-9">
             {/* Logo */}
-            <div className="mx-auto w-20 h-20 flex items-center justify-center rounded-2xl bg-white shadow-lg shadow-indigo-200 overflow-hidden">
+            <div className="mx-auto flex h-20 w-20 items-center justify-center overflow-hidden rounded-2xl border border-indigo-100 bg-white shadow-lg shadow-indigo-100">
               <img
                 src="/logo.png"
                 alt="ISST Logo"
-                className="w-full h-full object-contain"
+                className="h-full w-full object-contain"
               />
             </div>
 
             {/* Heading */}
-            <h1 className="text-center text-3xl font-extrabold mt-5 text-slate-800">
+            <h1 className="mt-5 text-center text-3xl font-extrabold text-[#312E81]">
               Welcome to ISST
             </h1>
 
-            <p className="text-center text-sm text-slate-500 mt-2 mb-8">
+            <p className="mb-8 mt-2 text-center text-sm text-slate-500">
               Sign in to your admin workspace
             </p>
 
             {/* Login Form */}
             <form onSubmit={submit} className="space-y-5">
-              {/* Email */}
+              {/* Email Address */}
               <div>
                 <label
                   htmlFor="login-email"
@@ -159,13 +184,13 @@ export default function Login() {
 
                 <div className="relative mt-2">
                   <Mail
-                    className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-indigo-500"
                     size={19}
+                    className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-indigo-500"
                   />
 
                   <input
-                    className="field h-12 !pl-11"
                     id="login-email"
+                    className={fieldClass}
                     autoComplete="username"
                     type="email"
                     required
@@ -187,13 +212,13 @@ export default function Login() {
 
                 <div className="relative mt-2">
                   <LockKeyhole
-                    className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-indigo-500"
                     size={19}
+                    className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-indigo-500"
                   />
 
                   <input
-                    className="field h-12 !pl-11 !pr-12"
                     id="login-password"
+                    className={`${fieldClass} pr-12`}
                     autoComplete="current-password"
                     type={show ? "text" : "password"}
                     required
@@ -204,11 +229,17 @@ export default function Login() {
 
                   <button
                     type="button"
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-indigo-500 hover:text-indigo-700 transition-colors"
-                    aria-label={show ? "Hide password" : "Show password"}
-                    onClick={() => setShow(!show)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-indigo-500 transition-colors hover:text-indigo-700"
+                    aria-label={
+                      show ? "Hide password" : "Show password"
+                    }
+                    onClick={() => setShow((prev) => !prev)}
                   >
-                    {show ? <EyeOff size={19} /> : <Eye size={19} />}
+                    {show ? (
+                      <EyeOff size={19} />
+                    ) : (
+                      <Eye size={19} />
+                    )}
                   </button>
                 </div>
               </div>
@@ -217,7 +248,7 @@ export default function Login() {
               {error && (
                 <p
                   role="alert"
-                  className="text-sm text-red-600 bg-red-50 border border-red-100 p-3 rounded-lg"
+                  className="rounded-xl border border-red-100 bg-red-50 p-3 text-sm text-red-600"
                 >
                   {error}
                 </p>
@@ -227,11 +258,12 @@ export default function Login() {
               <button
                 type="submit"
                 disabled={loading}
-                className="btn-primary w-full py-3 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#4338CA] to-[#6366F1] py-3 font-semibold text-white shadow-lg shadow-indigo-200 transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {loading ? (
                   <>
-                    <span className="w-5 h-5 border-2 border-white/40 border-t-white rounded-full animate-spin" />
+                    <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/40 border-t-white" />
+
                     Signing in...
                   </>
                 ) : (
@@ -244,20 +276,24 @@ export default function Login() {
             </form>
 
             {/* Secure Login Footer */}
-            <div className="mt-7 pt-5 border-t border-slate-200">
+            <div className="mt-7 border-t border-indigo-100 pt-5">
               <div className="flex items-center justify-center gap-2 text-xs text-slate-500">
-                <ShieldCheck size={16} className="text-indigo-500" />
+                <ShieldCheck
+                  size={16}
+                  className="text-indigo-500"
+                />
+
                 Secure Admin Access
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
 
       {/* Copyright */}
-      <div className="absolute bottom-4 left-[7vw] hidden lg:block text-xs text-white/60">
+      <footer className="absolute bottom-3 left-0 w-full text-center text-xs font-medium text-indigo-900/60">
         © {new Date().getFullYear()} ISST. All rights reserved.
-      </div>
+      </footer>
     </div>
   );
 }

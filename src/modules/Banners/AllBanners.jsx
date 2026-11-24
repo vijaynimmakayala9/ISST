@@ -124,21 +124,255 @@ export default function AllBanners() {
   }
   return (
     <>
-      <div className="section-hero hero-banners flex flex-wrap items-end justify-between gap-4 mb-7">
-        <div>
-          <h1 className="text-3xl font-bold">{"Banners"}</h1>
-          <p className="text-indigo-100 mt-2">Manage and organize banners</p>
-        </div>
-        <button
-          className="btn-primary"
-          onClick={() => {
-            setEdit(null);
-            setShow(true);
-          }}
+      <div className="relative isolate mb-7 flex min-h-[200px] w-full items-center overflow-hidden rounded-2xl bg-gradient-to-r from-[#312E81] via-[#4338CA] to-[#6366F1] px-5 py-6 text-white shadow-lg shadow-indigo-200 sm:px-8">
+        {/* Full Width SVG Background */}
+        <svg
+          className="pointer-events-none absolute inset-0 -z-10 h-full w-full"
+          viewBox="0 0 1440 240"
+          preserveAspectRatio="none"
+          fill="none"
+          aria-hidden="true"
         >
-          <Plus size={18} />
-          Add new
-        </button>
+          {/* Top Wave */}
+          <path
+            d="M700 0C880 170 1080 -30 1440 70V0H700Z"
+            fill="#A5B4FC"
+            fillOpacity="0.15"
+          />
+
+          {/* Bottom Waves */}
+          <path
+            d="M450 240C700 60 950 280 1180 130C1300 55 1380 100 1440 80V240H450Z"
+            fill="#A5B4FC"
+            fillOpacity="0.16"
+          />
+
+          <path
+            d="M650 240C850 120 1050 260 1220 160C1330 100 1390 145 1440 125V240H650Z"
+            fill="#C7D2FE"
+            fillOpacity="0.15"
+          />
+
+          {/* Decorative Lines */}
+          <path
+            d="M750 0C850 180 1150 20 1440 110"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          <path
+            d="M650 240C850 80 1100 270 1440 120"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          {/* Decorative Circles */}
+          <circle
+            cx="1280"
+            cy="120"
+            r="110"
+            stroke="white"
+            strokeOpacity="0.1"
+          />
+
+          <circle cx="1280" cy="120" r="90" fill="white" fillOpacity="0.05" />
+
+          <circle cx="80" cy="20" r="130" fill="white" fillOpacity="0.025" />
+        </svg>
+
+        {/* Banner Management SVG Illustration */}
+        <div className="pointer-events-none absolute inset-y-0 right-6 hidden w-[280px] items-center justify-center md:flex lg:right-12 lg:w-[340px]">
+          <svg
+            viewBox="0 0 340 220"
+            className="h-auto max-h-[190px] w-full"
+            fill="none"
+            aria-hidden="true"
+          >
+            {/* Background Rings */}
+            <circle
+              cx="185"
+              cy="110"
+              r="103"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+
+            <circle cx="185" cy="110" r="85" fill="white" fillOpacity="0.06" />
+
+            {/* Rear Banner Card */}
+            <g transform="rotate(9 190 100)">
+              <rect
+                x="85"
+                y="25"
+                width="215"
+                height="145"
+                rx="14"
+                fill="#A5B4FC"
+              />
+
+              <rect
+                x="96"
+                y="36"
+                width="193"
+                height="105"
+                rx="8"
+                fill="#C7D2FE"
+              />
+            </g>
+
+            {/* Main Banner Card */}
+            <rect
+              x="38"
+              y="49"
+              width="240"
+              height="150"
+              rx="14"
+              fill="#FFFFFF"
+            />
+
+            {/* Image Background */}
+            <rect
+              x="49"
+              y="60"
+              width="218"
+              height="103"
+              rx="8"
+              fill="#C7D2FE"
+            />
+
+            {/* Sun */}
+            <circle cx="224" cy="85" r="15" fill="#FDE68A" />
+
+            {/* Mountain Illustration */}
+            <path
+              d="M49 163L105 96L150 139L185 110L267 163H49Z"
+              fill="#6366F1"
+            />
+
+            <path d="M49 163L88 126L130 163H49Z" fill="#818CF8" />
+
+            <path d="M105 96L91 113L105 109L116 115Z" fill="#EEF2FF" />
+
+            {/* Image Card Details */}
+            <rect
+              x="50"
+              y="174"
+              width="90"
+              height="7"
+              rx="3.5"
+              fill="#A5B4FC"
+            />
+
+            <rect x="50" y="186" width="65" height="4" rx="2" fill="#E0E7FF" />
+
+            <rect
+              x="223"
+              y="174"
+              width="43"
+              height="15"
+              rx="5"
+              fill="#EEF2FF"
+            />
+
+            {/* Floating Add Banner Card */}
+            <rect
+              x="256"
+              y="132"
+              width="64"
+              height="64"
+              rx="15"
+              fill="#FFFFFF"
+            />
+
+            <rect
+              x="266"
+              y="142"
+              width="44"
+              height="44"
+              rx="11"
+              fill="#EEF2FF"
+            />
+
+            <path
+              d="M288 151V177M275 164H301"
+              stroke="#6366F1"
+              strokeWidth="4"
+              strokeLinecap="round"
+            />
+
+            {/* Floating Gallery Icon */}
+            <rect x="12" y="18" width="58" height="54" rx="12" fill="#FFFFFF" />
+
+            <rect
+              x="24"
+              y="29"
+              width="34"
+              height="30"
+              rx="5"
+              stroke="#6366F1"
+              strokeWidth="2.5"
+            />
+
+            <circle cx="34" cy="38" r="3.5" fill="#818CF8" />
+
+            <path
+              d="M24 54L35 44L43 51L50 43L58 54"
+              stroke="#6366F1"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+
+            {/* Decorative Sparkles */}
+            <path
+              d="M305 25V39M298 32H312M18 119V133M11 126H25"
+              stroke="#C7D2FE"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            <circle cx="115" cy="15" r="4" fill="#A5B4FC" />
+            <circle cx="320" cy="100" r="3" fill="#C7D2FE" />
+            <circle cx="24" cy="185" r="4" fill="#A5B4FC" />
+          </svg>
+        </div>
+
+        {/* Banner Section Content */}
+        <div className="relative z-10 w-full min-w-0 md:max-w-[60%]">
+          {/* Section Label */}
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5">
+            <span className="h-2 w-2 rounded-full bg-indigo-300" />
+
+            <span className="text-[11px] font-semibold uppercase tracking-widest text-indigo-100">
+              ISST · Content Management
+            </span>
+          </div>
+
+          {/* Heading */}
+          <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
+            Banners
+          </h1>
+
+          {/* Description */}
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-indigo-100 sm:text-base">
+            Manage and organize banners
+          </p>
+
+          {/* Add New Button */}
+          <button
+            type="button"
+            onClick={() => {
+              setEdit(null);
+              setShow(true);
+            }}
+            className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-[#4338CA] shadow-md transition-all duration-200 hover:bg-indigo-50 active:scale-95"
+          >
+            <Plus size={18} />
+            Add new
+          </button>
+        </div>
       </div>
       <div className="panel">
         <div className="flex flex-wrap justify-between items-center gap-3 mb-5">

@@ -124,23 +124,348 @@ export default function AllSkillCourses() {
   }
   return (
     <>
-      <div className="section-hero hero-skill-development flex flex-wrap items-end justify-between gap-4 mb-7">
-        <div>
-          <h1 className="text-3xl font-bold">{"Skill Development"}</h1>
-          <p className="text-indigo-100 mt-2">
+      <div className="relative isolate mb-7 flex min-h-[200px] w-full items-center overflow-hidden rounded-2xl bg-gradient-to-r from-[#312E81] via-[#4338CA] to-[#6366F1] px-5 py-6 text-white shadow-lg shadow-indigo-200 sm:px-8">
+        {/* Full Width SVG Background */}
+        <svg
+          className="pointer-events-none absolute inset-0 -z-10 h-full w-full"
+          viewBox="0 0 1440 240"
+          preserveAspectRatio="none"
+          fill="none"
+          aria-hidden="true"
+        >
+          {/* Top Wave */}
+          <path
+            d="M700 0C880 170 1080 -30 1440 70V0H700Z"
+            fill="#A5B4FC"
+            fillOpacity="0.15"
+          />
+
+          {/* Bottom Waves */}
+          <path
+            d="M450 240C700 60 950 280 1180 130C1300 55 1380 100 1440 80V240H450Z"
+            fill="#A5B4FC"
+            fillOpacity="0.16"
+          />
+
+          <path
+            d="M650 240C850 120 1050 260 1220 160C1330 100 1390 145 1440 125V240H650Z"
+            fill="#C7D2FE"
+            fillOpacity="0.15"
+          />
+
+          {/* Decorative Lines */}
+          <path
+            d="M750 0C850 180 1150 20 1440 110"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          <path
+            d="M650 240C850 80 1100 270 1440 120"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          {/* Background Circles */}
+          <circle
+            cx="1280"
+            cy="120"
+            r="110"
+            stroke="white"
+            strokeOpacity="0.1"
+          />
+
+          <circle cx="1280" cy="120" r="90" fill="white" fillOpacity="0.05" />
+
+          <circle cx="80" cy="20" r="130" fill="white" fillOpacity="0.025" />
+        </svg>
+
+        {/* Skill Development SVG Illustration */}
+        <div className="pointer-events-none absolute inset-y-0 right-6 hidden w-[32%] max-w-[340px] items-center justify-center md:flex lg:right-12">
+          <svg
+            viewBox="0 0 340 220"
+            className="h-auto max-h-[190px] w-full"
+            fill="none"
+            aria-hidden="true"
+          >
+            {/* Background Rings */}
+            <circle
+              cx="175"
+              cy="110"
+              r="103"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+
+            <circle cx="175" cy="110" r="85" fill="white" fillOpacity="0.06" />
+
+            {/* Skill Growth Chart Card */}
+            <rect
+              x="45"
+              y="65"
+              width="240"
+              height="137"
+              rx="14"
+              fill="#EEF2FF"
+            />
+
+            {/* Card Header */}
+            <rect x="58" y="78" width="85" height="7" rx="3.5" fill="#6366F1" />
+
+            <rect x="58" y="90" width="55" height="4" rx="2" fill="#A5B4FC" />
+
+            {/* Chart Grid */}
+            <path
+              d="M60 110H270M60 130H270M60 150H270M60 170H270M60 190H270"
+              stroke="#C7D2FE"
+              strokeWidth="1.5"
+            />
+
+            {/* Skill Progress Bars */}
+            <rect x="70" y="158" width="27" height="32" rx="5" fill="#A5B4FC" />
+
+            <rect
+              x="110"
+              y="142"
+              width="27"
+              height="48"
+              rx="5"
+              fill="#818CF8"
+            />
+
+            <rect
+              x="150"
+              y="125"
+              width="27"
+              height="65"
+              rx="5"
+              fill="#6366F1"
+            />
+
+            <rect
+              x="190"
+              y="112"
+              width="27"
+              height="78"
+              rx="5"
+              fill="#4338CA"
+            />
+
+            <rect
+              x="230"
+              y="100"
+              width="27"
+              height="90"
+              rx="5"
+              fill="#6366F1"
+            />
+
+            {/* Growth Arrow */}
+            <path
+              d="M70 143L110 121L150 131L190 99L240 83"
+              stroke="#4338CA"
+              strokeWidth="4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+
+            <path
+              d="M222 83H240V101"
+              stroke="#4338CA"
+              strokeWidth="4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+
+            {/* Floating Light Bulb Card */}
+            <rect x="12" y="15" width="85" height="96" rx="16" fill="white" />
+
+            <circle cx="54" cy="51" r="30" fill="#FEF3C7" />
+
+            {/* Light Bulb */}
+            <path
+              d="M35 47C35 21 73 21 73 47C73 61 63 64 63 76H45C45 64 35 61 35 47Z"
+              fill="#FBBF24"
+            />
+
+            {/* Bulb Filament */}
+            <path
+              d="M47 47L54 55L61 47M54 55V76"
+              stroke="#FFFFFF"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+
+            {/* Bulb Base */}
+            <rect x="45" y="76" width="18" height="8" rx="2" fill="#6366F1" />
+
+            <path
+              d="M48 89H60"
+              stroke="#4338CA"
+              strokeWidth="4"
+              strokeLinecap="round"
+            />
+
+            {/* Light Rays */}
+            <path
+              d="M54 17V22M24 46H29M79 46H84M32 25L36 29M72 29L76 25"
+              stroke="#F59E0B"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            {/* Skill Settings Gear */}
+            <g transform="translate(275 43)">
+              <path
+                d="M-7-29H7L10-21L18-18L26-20L33-8L27 0L28 8L33 14L26 26L17 23L9 27L7 34H-7L-10 26L-18 23L-26 26L-33 14L-27 6L-28-2L-33-8L-26-20L-17-18L-9-22Z"
+                fill="#C7D2FE"
+              />
+
+              <circle cx="0" cy="2" r="19" fill="#EEF2FF" />
+
+              <circle cx="0" cy="2" r="12" fill="#6366F1" />
+            </g>
+
+            {/* Floating Completed Skills Checklist */}
+            <rect x="247" y="112" width="80" height="90" rx="12" fill="white" />
+
+            {/* Checklist Heading */}
+            <rect
+              x="259"
+              y="123"
+              width="55"
+              height="5"
+              rx="2.5"
+              fill="#818CF8"
+            />
+
+            {/* Checklist Item 1 */}
+            <rect
+              x="258"
+              y="137"
+              width="16"
+              height="16"
+              rx="4"
+              fill="#E0E7FF"
+            />
+
+            <path
+              d="M262 145L265 148L271 141"
+              stroke="#6366F1"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+
+            <path
+              d="M282 145H315"
+              stroke="#A5B4FC"
+              strokeWidth="4"
+              strokeLinecap="round"
+            />
+
+            {/* Checklist Item 2 */}
+            <rect
+              x="258"
+              y="158"
+              width="16"
+              height="16"
+              rx="4"
+              fill="#E0E7FF"
+            />
+
+            <path
+              d="M262 166L265 169L271 162"
+              stroke="#6366F1"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+
+            <path
+              d="M282 166H315"
+              stroke="#A5B4FC"
+              strokeWidth="4"
+              strokeLinecap="round"
+            />
+
+            {/* Checklist Item 3 */}
+            <rect
+              x="258"
+              y="179"
+              width="16"
+              height="16"
+              rx="4"
+              fill="#E0E7FF"
+            />
+
+            <path
+              d="M262 187L265 190L271 183"
+              stroke="#6366F1"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+
+            <path
+              d="M282 187H308"
+              stroke="#A5B4FC"
+              strokeWidth="4"
+              strokeLinecap="round"
+            />
+
+            {/* Decorative Sparkles */}
+            <path
+              d="M125 18V34M117 26H133M18 139V155M10 147H26M320 78V94M312 86H328"
+              stroke="#C7D2FE"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            {/* Decorative Dots */}
+            <circle cx="177" cy="22" r="4" fill="#A5B4FC" />
+            <circle cx="24" cy="190" r="4" fill="#C7D2FE" />
+            <circle cx="223" cy="39" r="3" fill="#A5B4FC" />
+          </svg>
+        </div>
+
+        {/* Skill Development Content */}
+        <div className="relative z-10 w-full min-w-0 md:max-w-[60%]">
+          {/* Section Label */}
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5">
+            <span className="h-2 w-2 rounded-full bg-indigo-300" />
+
+            <span className="text-[11px] font-semibold uppercase tracking-widest text-indigo-100">
+              ISST · Skill Management
+            </span>
+          </div>
+
+          {/* Heading */}
+          <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
+            Skill Development
+          </h1>
+
+          {/* Description */}
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-indigo-100 sm:text-base">
             Manage and organize skill development
           </p>
+
+          {/* Add New Button */}
+          <button
+            type="button"
+            onClick={() => {
+              setEdit(null);
+              setShow(true);
+            }}
+            className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-[#4338CA] shadow-md transition-all duration-200 hover:bg-indigo-50 active:scale-95"
+          >
+            <Plus size={18} />
+            Add new
+          </button>
         </div>
-        <button
-          className="btn-primary"
-          onClick={() => {
-            setEdit(null);
-            setShow(true);
-          }}
-        >
-          <Plus size={18} />
-          Add new
-        </button>
       </div>
       <div className="panel">
         <div className="flex flex-wrap justify-between items-center gap-3 mb-5">

@@ -151,28 +151,619 @@ export default function AllPlacementTrainings() {
   const selected = tab === "categories" ? categories : loading ? [] : rows;
   return (
     <div className="space-y-6">
-      <div
-        className={`section-hero ${tab === "categories" ? "hero-placement-trainings-categories" : "hero-placement-trainings"} flex flex-wrap justify-between items-end gap-3`}
-      >
-        <div>
-          <h1 className="text-3xl font-bold text-white">
+      <div className="relative isolate flex min-h-[200px] w-full items-center justify-between gap-6 overflow-hidden rounded-2xl bg-gradient-to-r from-[#312E81] via-[#4338CA] to-[#6366F1] px-5 py-6 text-white shadow-lg shadow-indigo-200 sm:px-8">
+        {/* Full Width SVG Background */}
+        <svg
+          className="pointer-events-none absolute inset-0 -z-10 h-full w-full"
+          viewBox="0 0 1440 240"
+          preserveAspectRatio="none"
+          fill="none"
+          aria-hidden="true"
+        >
+          {/* Top Wave */}
+          <path
+            d="M700 0C880 170 1080 -30 1440 70V0H700Z"
+            fill="#A5B4FC"
+            fillOpacity="0.15"
+          />
+
+          {/* Bottom Waves */}
+          <path
+            d="M450 240C700 60 950 280 1180 130C1300 55 1380 100 1440 80V240H450Z"
+            fill="#A5B4FC"
+            fillOpacity="0.16"
+          />
+
+          <path
+            d="M650 240C850 120 1050 260 1220 160C1330 100 1390 145 1440 125V240H650Z"
+            fill="#C7D2FE"
+            fillOpacity="0.15"
+          />
+
+          {/* Decorative Lines */}
+          <path
+            d="M750 0C850 180 1150 20 1440 110"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          <path
+            d="M650 240C850 80 1100 270 1440 120"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          {/* Decorative Circles */}
+          <circle
+            cx="1280"
+            cy="120"
+            r="110"
+            stroke="white"
+            strokeOpacity="0.1"
+          />
+
+          <circle cx="1280" cy="120" r="90" fill="white" fillOpacity="0.05" />
+
+          <circle cx="80" cy="20" r="130" fill="white" fillOpacity="0.025" />
+        </svg>
+
+        {/* Placement Training Content */}
+        <div className="relative z-10 min-w-0 flex-1">
+          {/* Section Label */}
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5">
+            <span className="h-2 w-2 shrink-0 rounded-full bg-indigo-300" />
+
+            <span className="text-[11px] font-semibold uppercase tracking-widest text-indigo-100">
+              ISST · Placement Management
+            </span>
+          </div>
+
+          {/* Dynamic Heading */}
+          <h1 className="break-words text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
             {tab === "categories" ? "Placement Categories" : title}
           </h1>
-          <p className="mt-1 text-indigo-100">
+
+          {/* Dynamic Description */}
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-indigo-100 sm:text-base">
             {tab === "categories"
               ? "Create and organize categories."
               : `Manage ${title.toLowerCase()}.`}
           </p>
+
+          {/* Dynamic Add Button */}
+          <button
+            type="button"
+            onClick={() =>
+              setEditing({
+                category: tab === "categories",
+                item: null,
+              })
+            }
+            className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-[#4338CA] shadow-md transition-all duration-200 hover:bg-indigo-50 active:scale-95"
+          >
+            <Plus size={18} />
+
+            {tab === "categories" ? "Add category" : "Add placement training"}
+          </button>
         </div>
-        <button
-          className="btn-primary"
-          onClick={() =>
-            setEditing({ category: tab === "categories", item: null })
-          }
-        >
-          <Plus size={17} />
-          {tab === "categories" ? "Add category" : "Add placement training"}
-        </button>
+
+        {/* Dynamic SVG Illustration */}
+        <div className="pointer-events-none relative hidden w-[32%] max-w-[340px] shrink-0 items-center justify-center md:flex">
+          <svg
+            viewBox="0 0 340 220"
+            className="h-auto max-h-[190px] w-full"
+            fill="none"
+            aria-hidden="true"
+          >
+            {/* Background Rings */}
+            <circle
+              cx="175"
+              cy="110"
+              r="103"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+
+            <circle cx="175" cy="110" r="85" fill="white" fillOpacity="0.06" />
+
+            {tab === "categories" ? (
+              <>
+                {/* =====================================
+              PLACEMENT CATEGORIES ILLUSTRATION
+          ===================================== */}
+
+                {/* Rear Folder */}
+                <path
+                  d="M72 45H145L165 65H282Q294 65 294 77V173Q294 185 282 185H72Q60 185 60 173V57Q60 45 72 45Z"
+                  fill="#A5B4FC"
+                />
+
+                {/* Professional Resume Document */}
+                <g transform="rotate(-9 130 100)">
+                  <rect
+                    x="80"
+                    y="24"
+                    width="105"
+                    height="140"
+                    rx="10"
+                    fill="#EEF2FF"
+                  />
+
+                  {/* Profile Avatar */}
+                  <circle cx="104" cy="49" r="15" fill="#C7D2FE" />
+
+                  <circle cx="104" cy="44" r="5" fill="#6366F1" />
+
+                  <path d="M94 59C94 47 114 47 114 59Z" fill="#818CF8" />
+
+                  {/* Resume Heading */}
+                  <path
+                    d="M126 44H170"
+                    stroke="#6366F1"
+                    strokeWidth="5"
+                    strokeLinecap="round"
+                  />
+
+                  <path
+                    d="M126 55H158"
+                    stroke="#A5B4FC"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                  />
+
+                  {/* Resume Content */}
+                  <path
+                    d="M95 80H169
+                 M95 94H169
+                 M95 108H155
+                 M95 122H169"
+                    stroke="#A5B4FC"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+                </g>
+
+                {/* Training Document */}
+                <g transform="rotate(9 225 95)">
+                  <rect
+                    x="180"
+                    y="27"
+                    width="98"
+                    height="135"
+                    rx="10"
+                    fill="white"
+                  />
+
+                  <path
+                    d="M195 46H263"
+                    stroke="#6366F1"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                  />
+
+                  {/* Training Checklist */}
+                  {[61, 82, 103, 124].map((y) => (
+                    <g key={y}>
+                      <rect
+                        x="195"
+                        y={y}
+                        width="14"
+                        height="14"
+                        rx="4"
+                        fill="#E0E7FF"
+                      />
+
+                      <path
+                        d={`M198 ${y + 7}L201 ${y + 10}L206 ${y + 4}`}
+                        stroke="#4338CA"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+
+                      <path
+                        d={`M217 ${y + 7}H263`}
+                        stroke="#A5B4FC"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                      />
+                    </g>
+                  ))}
+                </g>
+
+                {/* Front Folder */}
+                <path
+                  d="M49 100Q50 89 63 89H291Q305 89 303 103L287 190Q285 201 272 201H70Q57 201 55 188L39 108Q38 100 49 100Z"
+                  fill="#C7D2FE"
+                />
+
+                {/* Folder Highlight */}
+                <path
+                  d="M53 106H289"
+                  stroke="#EEF2FF"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+
+                {/* Category Grid Container */}
+                <rect
+                  x="109"
+                  y="117"
+                  width="125"
+                  height="66"
+                  rx="12"
+                  fill="#EEF2FF"
+                />
+
+                {/* Category Cards */}
+                {[
+                  [120, 127],
+                  [177, 127],
+                  [120, 153],
+                  [177, 153],
+                ].map(([x, y]) => (
+                  <g key={`${x}-${y}`}>
+                    <rect
+                      x={x}
+                      y={y}
+                      width="46"
+                      height="20"
+                      rx="5"
+                      fill="#818CF8"
+                    />
+
+                    <path
+                      d={`M${x + 10} ${y + 10}H${x + 36}`}
+                      stroke="white"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                  </g>
+                ))}
+
+                {/* Floating Category Icon */}
+                <rect
+                  x="10"
+                  y="17"
+                  width="70"
+                  height="66"
+                  rx="14"
+                  fill="white"
+                />
+
+                {[
+                  [22, 29],
+                  [48, 29],
+                  [22, 55],
+                  [48, 55],
+                ].map(([x, y]) => (
+                  <rect
+                    key={`${x}-${y}`}
+                    x={x}
+                    y={y}
+                    width="19"
+                    height="19"
+                    rx="5"
+                    fill="#6366F1"
+                  />
+                ))}
+
+                {/* Floating Professional Briefcase Card */}
+                <rect
+                  x="257"
+                  y="135"
+                  width="72"
+                  height="72"
+                  rx="15"
+                  fill="white"
+                />
+
+                <rect
+                  x="266"
+                  y="144"
+                  width="54"
+                  height="54"
+                  rx="12"
+                  fill="#EEF2FF"
+                />
+
+                {/* Briefcase Handle */}
+                <path
+                  d="M283 160V152H303V160"
+                  stroke="#4338CA"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+
+                {/* Briefcase Body */}
+                <rect
+                  x="272"
+                  y="160"
+                  width="42"
+                  height="29"
+                  rx="6"
+                  fill="#6366F1"
+                />
+
+                <path d="M272 172H314" stroke="#C7D2FE" strokeWidth="2" />
+
+                <rect
+                  x="289"
+                  y="169"
+                  width="8"
+                  height="7"
+                  rx="2"
+                  fill="white"
+                />
+              </>
+            ) : (
+              <>
+                {/* =====================================
+              PLACEMENT TRAININGS ILLUSTRATION
+          ===================================== */}
+
+                {/* Professional Resume */}
+                <g transform="rotate(-9 85 100)">
+                  <rect
+                    x="20"
+                    y="23"
+                    width="132"
+                    height="165"
+                    rx="12"
+                    fill="white"
+                  />
+
+                  {/* Profile Avatar */}
+                  <circle cx="49" cy="52" r="19" fill="#E0E7FF" />
+
+                  <circle cx="49" cy="46" r="7" fill="#818CF8" />
+
+                  <path d="M36 65C36 48 62 48 62 65Z" fill="#818CF8" />
+
+                  {/* Profile Information */}
+                  <path
+                    d="M78 45H138"
+                    stroke="#6366F1"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                  />
+
+                  <path
+                    d="M78 58H125"
+                    stroke="#A5B4FC"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+
+                  {/* Resume Content */}
+                  <path
+                    d="M34 85H138
+                 M34 99H127
+                 M34 113H138
+                 M34 127H116
+                 M34 141H138"
+                    stroke="#A5B4FC"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+
+                  {/* Resume Skill Indicators */}
+                  {[34, 70, 106].map((x) => (
+                    <rect
+                      key={x}
+                      x={x}
+                      y="158"
+                      width="28"
+                      height="13"
+                      rx="4"
+                      fill="#C7D2FE"
+                    />
+                  ))}
+                </g>
+
+                {/* Career Growth Chart Card */}
+                <rect
+                  x="185"
+                  y="12"
+                  width="141"
+                  height="106"
+                  rx="14"
+                  fill="#EEF2FF"
+                />
+
+                {/* Chart Heading */}
+                <path
+                  d="M199 25H262"
+                  stroke="#6366F1"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                />
+
+                {/* Chart Grid */}
+                <path
+                  d="M199 46H312
+               M199 64H312
+               M199 82H312
+               M199 100H312"
+                  stroke="#C7D2FE"
+                  strokeWidth="1.5"
+                />
+
+                {/* Career Growth Bars */}
+                {[
+                  [204, 77, 23],
+                  [232, 65, 35],
+                  [260, 52, 48],
+                  [288, 38, 62],
+                ].map(([x, y, height], index) => (
+                  <rect
+                    key={x}
+                    x={x}
+                    y={y}
+                    width="18"
+                    height={height}
+                    rx="4"
+                    fill={["#A5B4FC", "#818CF8", "#6366F1", "#4338CA"][index]}
+                  />
+                ))}
+
+                {/* Growth Arrow */}
+                <path
+                  d="M205 67L234 53L263 58L302 28"
+                  stroke="#4338CA"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+
+                <path
+                  d="M289 28H302V41"
+                  stroke="#4338CA"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+
+                {/* Briefcase Shadow */}
+                <ellipse
+                  cx="173"
+                  cy="206"
+                  rx="120"
+                  ry="9"
+                  fill="#312E81"
+                  fillOpacity="0.2"
+                />
+
+                {/* Professional Briefcase Handle */}
+                <rect
+                  x="128"
+                  y="81"
+                  width="83"
+                  height="47"
+                  rx="12"
+                  stroke="#C7D2FE"
+                  strokeWidth="10"
+                />
+
+                {/* Main Briefcase Body */}
+                <rect
+                  x="57"
+                  y="109"
+                  width="226"
+                  height="94"
+                  rx="15"
+                  fill="#818CF8"
+                />
+
+                {/* Briefcase Upper Section */}
+                <path
+                  d="M57 124C57 115.7 63.7 109 72 109H268C276.3 109 283 115.7 283 124V150H57V124Z"
+                  fill="#C7D2FE"
+                />
+
+                {/* Briefcase Upper Highlight */}
+                <path
+                  d="M70 117H270"
+                  stroke="#EEF2FF"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+
+                {/* Briefcase Vertical Straps */}
+                <rect x="90" y="109" width="13" height="94" fill="#A5B4FC" />
+
+                <rect x="237" y="109" width="13" height="94" fill="#A5B4FC" />
+
+                {/* Briefcase Center Lock */}
+                <rect
+                  x="153"
+                  y="139"
+                  width="34"
+                  height="27"
+                  rx="6"
+                  fill="#4338CA"
+                />
+
+                <rect
+                  x="160"
+                  y="146"
+                  width="20"
+                  height="13"
+                  rx="3"
+                  fill="#FDE68A"
+                />
+
+                <circle cx="170" cy="152.5" r="2.5" fill="#92400E" />
+
+                {/* Briefcase Bottom Detail */}
+                <path
+                  d="M72 191H269"
+                  stroke="#C7D2FE"
+                  strokeOpacity="0.6"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+
+                {/* Floating Placement Success Card */}
+                <rect
+                  x="252"
+                  y="135"
+                  width="77"
+                  height="72"
+                  rx="16"
+                  fill="white"
+                />
+
+                <circle cx="290.5" cy="171" r="26" fill="#DCFCE7" />
+
+                <circle cx="290.5" cy="171" r="19" fill="#22C55E" />
+
+                <path
+                  d="M280 171L287 178L301 163"
+                  stroke="white"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+
+                {/* Floating Interview Card */}
+                <rect
+                  x="10"
+                  y="141"
+                  width="61"
+                  height="57"
+                  rx="12"
+                  fill="white"
+                />
+
+                {/* Interview Chat Bubble */}
+                <path d="M21 152H60V177H43L34 186V177H21V152Z" fill="#E0E7FF" />
+
+                <circle cx="30" cy="164" r="3" fill="#6366F1" />
+                <circle cx="40" cy="164" r="3" fill="#6366F1" />
+                <circle cx="50" cy="164" r="3" fill="#6366F1" />
+              </>
+            )}
+
+            {/* Common Decorative Sparkles */}
+            <path
+              d="M165 12V26M158 19H172
+           M10 110V124M3 117H17
+           M320 124V134M315 129H325"
+              stroke="#C7D2FE"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            {/* Decorative Dots */}
+            <circle cx="160" cy="51" r="4" fill="#A5B4FC" />
+            <circle cx="15" cy="95" r="3" fill="#C7D2FE" />
+            <circle cx="330" cy="8" r="4" fill="#A5B4FC" />
+          </svg>
+        </div>
       </div>
       <div className="panel">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-5">

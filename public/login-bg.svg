@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#c7d2fe"/><stop offset=".65" stop-color="#f8faff"/><stop offset="1" stop-color="#e0e7ff"/></linearGradient><linearGradient id="wall" x2="0" y2="1"><stop stop-color="#fafaff"/><stop offset="1" stop-color="#c7cde9"/></linearGradient><g id="window"><rect width="30" height="49" rx="5" fill="#8999cc"/><path d="M15 3v43M3 24h24" stroke="#e0e7ff" stroke-width="3"/></g><g id="tree"><path d="M0 0v-100" stroke="#8da9a0" stroke-width="8"/><ellipse cx="-20" cy="-75" rx="33" ry="49" fill="#b2d5c8"/><ellipse cx="24" cy="-78" rx="34" ry="52" fill="#9fc8bc"/><ellipse cy="-120" rx="32" ry="48" fill="#c0ded2"/></g></defs>
+<rect width="1600" height="1000" fill="url(#sky)"/><circle cx="1350" cy="60" r="240" fill="#a5b4fc" opacity=".25"/><circle cx="1350" cy="60" r="290" fill="none" stroke="#a5b4fc" stroke-width="3" opacity=".4"/>
+<g fill="white" opacity=".7"><ellipse cx="190" cy="140" rx="95" ry="25"/><ellipse cx="240" cy="120" rx="55" ry="35"/><ellipse cx="850" cy="180" rx="100" ry="25"/><ellipse cx="900" cy="160" rx="55" ry="35"/></g>
+<path d="M0 690Q230 560 480 710T1000 660T1600 650V1000H0Z" fill="#dce6f5"/><path d="M0 790Q250 670 550 780T1100 740T1600 730V1000H0Z" fill="#cfe4dc"/>
+<!-- University campus -->
+<g transform="translate(75 540)"><rect x="0" y="85" width="680" height="230" rx="5" fill="url(#wall)"/><path d="M-15 85L130 10 275 85M405 85L550 10 695 85" fill="#8799d2"/><rect x="240" y="0" width="200" height="315" fill="url(#wall)"/><path d="M220 0L340 -90 460 0Z" fill="#788ac7"/><path d="M340 -90v-55l60 15-60 15" fill="#818cf8"/><circle cx="340" cy="43" r="24" fill="#fff" stroke="#8999cc" stroke-width="4"/><path d="M340 28v15l12 8" stroke="#6366a5" stroke-width="3" fill="none"/><path d="M0 100h680M0 210h680" stroke="#b4bfe2" stroke-width="8"/><g>
+<use href="#window" x="35" y="125"/>
+<use href="#window" x="35" y="235"/>
+<use href="#window" x="90" y="125"/>
+<use href="#window" x="90" y="235"/>
+<use href="#window" x="145" y="125"/>
+<use href="#window" x="145" y="235"/>
+<use href="#window" x="195" y="125"/>
+<use href="#window" x="195" y="235"/>
+<use href="#window" x="465" y="125"/>
+<use href="#window" x="465" y="235"/>
+<use href="#window" x="520" y="125"/>
+<use href="#window" x="520" y="235"/>
+<use href="#window" x="575" y="125"/>
+<use href="#window" x="575" y="235"/>
+<use href="#window" x="630" y="125"/>
+<use href="#window" x="630" y="235"/>
+</g><path d="M300 315v-100a40 40 0 0 1 80 0v100" fill="#8999cc"/><path d="M265 105v200M415 105v200" stroke="#fff" stroke-width="16"/><path d="M225 315h230v12H225z" fill="#aeb9dc"/></g>
+<!-- School building -->
+<g transform="translate(1080 650)"><rect width="420" height="190" fill="url(#wall)"/><path d="M-15 0L210 -95 435 0Z" fill="#9aa9df"/><rect x="170" y="85" width="80" height="105" rx="12" fill="#8999cc"/><use href="#window" x="35" y="45"/><use href="#window" x="100" y="45"/><use href="#window" x="290" y="45"/><use href="#window" x="355" y="45"/></g>
+<use href="#tree" transform="translate(45 880)"/><use href="#tree" transform="translate(800 870) scale(1.15)"/><use href="#tree" transform="translate(1020 880)"/><use href="#tree" transform="translate(1550 880)"/>
+<path d="M0 870Q280 940 600 875T1200 900T1600 860V1000H0Z" fill="#b8c9f3"/><path d="M0 920Q350 830 750 940T1600 910V1000H0Z" fill="#e0e7ff"/><path d="M0 970Q350 900 750 970T1600 950V1000H0Z" fill="#f5f7ff"/>
+<g transform="translate(950 290) rotate(-12)" opacity=".25" fill="#6366f1"><path d="M-65 0L0 -28 65 0 0 28Z"/><path d="M-38 17v25q38 30 76 0V17L0 34Z"/><path d="M65 0v47" stroke="#6366f1" stroke-width="5"/></g></svg>

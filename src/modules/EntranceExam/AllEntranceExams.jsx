@@ -151,28 +151,570 @@ export default function AllEntranceExams() {
   const selected = tab === "categories" ? categories : loading ? [] : rows;
   return (
     <div className="space-y-6">
-      <div
-        className={`section-hero ${tab === "categories" ? "hero-entrance-exams-categories" : "hero-entrance-exams"} flex flex-wrap justify-between items-end gap-3`}
-      >
-        <div>
-          <h1 className="text-3xl font-bold text-white">
+      <div className="relative isolate flex min-h-[200px] w-full items-center justify-between gap-6 overflow-hidden rounded-2xl bg-gradient-to-r from-[#312E81] via-[#4338CA] to-[#6366F1] px-5 py-6 text-white shadow-lg shadow-indigo-200 sm:px-8">
+        {/* Full Width SVG Background */}
+        <svg
+          className="pointer-events-none absolute inset-0 -z-10 h-full w-full"
+          viewBox="0 0 1440 240"
+          preserveAspectRatio="none"
+          fill="none"
+          aria-hidden="true"
+        >
+          {/* Top Wave */}
+          <path
+            d="M700 0C880 170 1080 -30 1440 70V0H700Z"
+            fill="#A5B4FC"
+            fillOpacity="0.15"
+          />
+
+          {/* Bottom Waves */}
+          <path
+            d="M450 240C700 60 950 280 1180 130C1300 55 1380 100 1440 80V240H450Z"
+            fill="#A5B4FC"
+            fillOpacity="0.16"
+          />
+
+          <path
+            d="M650 240C850 120 1050 260 1220 160C1330 100 1390 145 1440 125V240H650Z"
+            fill="#C7D2FE"
+            fillOpacity="0.15"
+          />
+
+          {/* Decorative Lines */}
+          <path
+            d="M750 0C850 180 1150 20 1440 110"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          <path
+            d="M650 240C850 80 1100 270 1440 120"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          {/* Decorative Circles */}
+          <circle
+            cx="1280"
+            cy="120"
+            r="110"
+            stroke="white"
+            strokeOpacity="0.1"
+          />
+
+          <circle cx="1280" cy="120" r="90" fill="white" fillOpacity="0.05" />
+
+          <circle cx="80" cy="20" r="130" fill="white" fillOpacity="0.025" />
+        </svg>
+
+        {/* Entrance Exam Content */}
+        <div className="relative z-10 min-w-0 flex-1">
+          {/* Section Label */}
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5">
+            <span className="h-2 w-2 shrink-0 rounded-full bg-indigo-300" />
+
+            <span className="text-[11px] font-semibold uppercase tracking-widest text-indigo-100">
+              ISST · Entrance Exam Management
+            </span>
+          </div>
+
+          {/* Dynamic Heading */}
+          <h1 className="break-words text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
             {tab === "categories" ? "Exam Categories" : title}
           </h1>
-          <p className="mt-1 text-indigo-100">
+
+          {/* Dynamic Description */}
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-indigo-100 sm:text-base">
             {tab === "categories"
               ? "Create and organize categories."
               : `Manage ${title.toLowerCase()}.`}
           </p>
+
+          {/* Dynamic Add Button */}
+          <button
+            type="button"
+            onClick={() =>
+              setEditing({
+                category: tab === "categories",
+                item: null,
+              })
+            }
+            className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-[#4338CA] shadow-md transition-all duration-200 hover:bg-indigo-50 active:scale-95"
+          >
+            <Plus size={18} />
+
+            {tab === "categories" ? "Add category" : "Add entrance exam"}
+          </button>
         </div>
-        <button
-          className="btn-primary"
-          onClick={() =>
-            setEditing({ category: tab === "categories", item: null })
-          }
-        >
-          <Plus size={17} />
-          {tab === "categories" ? "Add category" : "Add entrance exam"}
-        </button>
+
+        {/* Dynamic SVG Illustration */}
+        <div className="pointer-events-none relative hidden w-[32%] max-w-[340px] shrink-0 items-center justify-center md:flex">
+          <svg
+            viewBox="0 0 340 220"
+            className="h-auto max-h-[190px] w-full"
+            fill="none"
+            aria-hidden="true"
+          >
+            {/* Background Rings */}
+            <circle
+              cx="175"
+              cy="110"
+              r="103"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+
+            <circle cx="175" cy="110" r="85" fill="white" fillOpacity="0.06" />
+
+            {tab === "categories" ? (
+              <>
+                {/* =====================================
+              EXAM CATEGORIES ILLUSTRATION
+          ===================================== */}
+
+                {/* Rear Folder */}
+                <path
+                  d="M72 45H145L165 65H282Q294 65 294 77V173Q294 185 282 185H72Q60 185 60 173V57Q60 45 72 45Z"
+                  fill="#A5B4FC"
+                />
+
+                {/* First Question Paper */}
+                <g transform="rotate(-9 130 100)">
+                  <rect
+                    x="80"
+                    y="24"
+                    width="105"
+                    height="140"
+                    rx="10"
+                    fill="#EEF2FF"
+                  />
+
+                  {/* Paper Heading */}
+                  <path
+                    d="M95 41H169"
+                    stroke="#6366F1"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                  />
+
+                  {/* Multiple Choice Questions */}
+                  {[59, 77, 95, 113].map((y) => (
+                    <g key={y}>
+                      <circle
+                        cx="101"
+                        cy={y}
+                        r="5"
+                        stroke="#818CF8"
+                        strokeWidth="2"
+                      />
+
+                      <circle cx="101" cy={y} r="2.5" fill="#6366F1" />
+
+                      <path
+                        d={`M114 ${y}H169`}
+                        stroke="#A5B4FC"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                      />
+                    </g>
+                  ))}
+                </g>
+
+                {/* Second Question Paper */}
+                <g transform="rotate(9 225 95)">
+                  <rect
+                    x="180"
+                    y="27"
+                    width="98"
+                    height="135"
+                    rx="10"
+                    fill="white"
+                  />
+
+                  <path
+                    d="M195 46H263"
+                    stroke="#6366F1"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                  />
+
+                  <path
+                    d="M195 61H263M195 74H251M195 87H263"
+                    stroke="#A5B4FC"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+
+                  {/* Answer Grid */}
+                  {[
+                    [195, 100],
+                    [219, 100],
+                    [243, 100],
+                    [195, 122],
+                    [219, 122],
+                    [243, 122],
+                  ].map(([x, y]) => (
+                    <rect
+                      key={`${x}-${y}`}
+                      x={x}
+                      y={y}
+                      width="16"
+                      height="15"
+                      rx="4"
+                      fill="#C7D2FE"
+                    />
+                  ))}
+                </g>
+
+                {/* Front Folder */}
+                <path
+                  d="M49 100Q50 89 63 89H291Q305 89 303 103L287 190Q285 201 272 201H70Q57 201 55 188L39 108Q38 100 49 100Z"
+                  fill="#C7D2FE"
+                />
+
+                {/* Folder Highlight */}
+                <path
+                  d="M53 106H289"
+                  stroke="#EEF2FF"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+
+                {/* Category Grid Container */}
+                <rect
+                  x="109"
+                  y="117"
+                  width="125"
+                  height="66"
+                  rx="12"
+                  fill="#EEF2FF"
+                />
+
+                {/* Category Cards */}
+                {[
+                  [120, 127],
+                  [177, 127],
+                  [120, 153],
+                  [177, 153],
+                ].map(([x, y]) => (
+                  <g key={`${x}-${y}`}>
+                    <rect
+                      x={x}
+                      y={y}
+                      width="46"
+                      height="20"
+                      rx="5"
+                      fill="#818CF8"
+                    />
+
+                    <path
+                      d={`M${x + 10} ${y + 10}H${x + 36}`}
+                      stroke="white"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                  </g>
+                ))}
+
+                {/* Floating Category Icon */}
+                <rect
+                  x="10"
+                  y="17"
+                  width="70"
+                  height="66"
+                  rx="14"
+                  fill="white"
+                />
+
+                {[
+                  [22, 29],
+                  [48, 29],
+                  [22, 55],
+                  [48, 55],
+                ].map(([x, y]) => (
+                  <rect
+                    key={`${x}-${y}`}
+                    x={x}
+                    y={y}
+                    width="19"
+                    height="19"
+                    rx="5"
+                    fill="#6366F1"
+                  />
+                ))}
+
+                {/* Floating Question Paper Card */}
+                <rect
+                  x="264"
+                  y="139"
+                  width="65"
+                  height="68"
+                  rx="14"
+                  fill="white"
+                />
+
+                <rect
+                  x="275"
+                  y="150"
+                  width="43"
+                  height="46"
+                  rx="7"
+                  fill="#EEF2FF"
+                />
+
+                <path
+                  d="M283 160H309M283 170H304M283 180H309"
+                  stroke="#6366F1"
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                />
+              </>
+            ) : (
+              <>
+                {/* =====================================
+              ENTRANCE EXAMS ILLUSTRATION
+          ===================================== */}
+
+                {/* Exam Clipboard Shadow */}
+                <rect
+                  x="87"
+                  y="24"
+                  width="177"
+                  height="181"
+                  rx="15"
+                  fill="#312E81"
+                  fillOpacity="0.2"
+                  transform="rotate(8 175 114)"
+                />
+
+                {/* Main Exam Clipboard */}
+                <rect
+                  x="77"
+                  y="23"
+                  width="175"
+                  height="184"
+                  rx="15"
+                  fill="#A5B4FC"
+                />
+
+                {/* Exam Paper */}
+                <rect
+                  x="87"
+                  y="34"
+                  width="155"
+                  height="162"
+                  rx="10"
+                  fill="white"
+                />
+
+                {/* Clipboard Clip */}
+                <rect
+                  x="128"
+                  y="15"
+                  width="73"
+                  height="26"
+                  rx="8"
+                  fill="#6366F1"
+                />
+
+                <circle cx="164.5" cy="24" r="4" fill="#C7D2FE" />
+
+                {/* Exam Paper Heading */}
+                <rect
+                  x="103"
+                  y="51"
+                  width="123"
+                  height="8"
+                  rx="4"
+                  fill="#6366F1"
+                />
+
+                <rect
+                  x="103"
+                  y="65"
+                  width="79"
+                  height="4"
+                  rx="2"
+                  fill="#A5B4FC"
+                />
+
+                {/* Multiple Choice Questions */}
+                {[82, 108, 134, 160].map((y, index) => (
+                  <g key={y}>
+                    {/* Question Container */}
+                    <rect
+                      x="101"
+                      y={y}
+                      width="128"
+                      height="22"
+                      rx="5"
+                      fill="#EEF2FF"
+                    />
+
+                    {/* Answer Options */}
+                    {[111, 127, 143].map((x, optionIndex) => (
+                      <g key={x}>
+                        <circle
+                          cx={x}
+                          cy={y + 11}
+                          r="5"
+                          stroke="#818CF8"
+                          strokeWidth="1.5"
+                        />
+
+                        {optionIndex === index % 3 && (
+                          <circle cx={x} cy={y + 11} r="2.8" fill="#4338CA" />
+                        )}
+                      </g>
+                    ))}
+
+                    {/* Question Text Lines */}
+                    <path
+                      d={`M157 ${y + 8}H217`}
+                      stroke="#A5B4FC"
+                      strokeWidth="3.5"
+                      strokeLinecap="round"
+                    />
+
+                    <path
+                      d={`M157 ${y + 15}H201`}
+                      stroke="#C7D2FE"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                  </g>
+                ))}
+
+                {/* Pencil Illustration */}
+                <g transform="rotate(22 45 115)">
+                  <rect
+                    x="32"
+                    y="35"
+                    width="25"
+                    height="139"
+                    rx="5"
+                    fill="#FBBF24"
+                  />
+
+                  {/* Pencil Highlight */}
+                  <rect x="37" y="56" width="5" height="118" fill="#FDE68A" />
+
+                  {/* Pencil Eraser */}
+                  <rect
+                    x="32"
+                    y="22"
+                    width="25"
+                    height="20"
+                    rx="5"
+                    fill="#F9A8D4"
+                  />
+
+                  {/* Pencil Metal Ring */}
+                  <rect x="32" y="42" width="25" height="10" fill="#C7D2FE" />
+
+                  {/* Pencil Tip */}
+                  <path d="M32 174H57L44.5 201Z" fill="#FDE68A" />
+
+                  {/* Pencil Lead */}
+                  <path d="M40 191H49L44.5 201Z" fill="#312E81" />
+                </g>
+
+                {/* Floating Stopwatch Card */}
+                <rect
+                  x="245"
+                  y="118"
+                  width="83"
+                  height="88"
+                  rx="16"
+                  fill="white"
+                />
+
+                {/* Stopwatch Top Button */}
+                <rect
+                  x="278"
+                  y="127"
+                  width="17"
+                  height="9"
+                  rx="3"
+                  fill="#6366F1"
+                />
+
+                <path
+                  d="M307 139L312 134"
+                  stroke="#6366F1"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
+
+                {/* Stopwatch Body */}
+                <circle cx="286.5" cy="166" r="29" fill="#C7D2FE" />
+
+                <circle cx="286.5" cy="166" r="23" fill="#EEF2FF" />
+
+                {/* Clock Indicators */}
+                <path
+                  d="M286.5 146V150
+               M286.5 182V186
+               M266.5 166H270.5
+               M302.5 166H306.5"
+                  stroke="#818CF8"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+
+                {/* Clock Hands */}
+                <path
+                  d="M286.5 153V166L299 173"
+                  stroke="#4338CA"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+
+                <circle cx="286.5" cy="166" r="3.5" fill="#6366F1" />
+
+                {/* Floating Exam Completion Card */}
+                <rect
+                  x="261"
+                  y="13"
+                  width="66"
+                  height="68"
+                  rx="14"
+                  fill="white"
+                />
+
+                <circle cx="294" cy="47" r="24" fill="#DCFCE7" />
+
+                <circle cx="294" cy="47" r="17" fill="#22C55E" />
+
+                <path
+                  d="M285 47L291 54L303 40"
+                  stroke="white"
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </>
+            )}
+
+            {/* Common Decorative Sparkles */}
+            <path
+              d="M108 12V26M101 19H115
+           M15 110V124M8 117H22
+           M320 94V108M313 101H327"
+              stroke="#C7D2FE"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            {/* Decorative Dots */}
+            <circle cx="215" cy="13" r="4" fill="#A5B4FC" />
+            <circle cx="20" cy="151" r="3" fill="#C7D2FE" />
+            <circle cx="329" cy="120" r="4" fill="#A5B4FC" />
+          </svg>
+        </div>
       </div>
       <div className="panel">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-5">

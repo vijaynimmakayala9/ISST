@@ -124,23 +124,386 @@ export default function AllColleges() {
   }
   return (
     <>
-      <div className="section-hero hero-college-selection flex flex-wrap items-end justify-between gap-4 mb-7">
-        <div>
-          <h1 className="text-3xl font-bold">{"College Selection"}</h1>
-          <p className="text-indigo-100 mt-2">
+      <div className="relative isolate mb-7 flex min-h-[200px] w-full items-center overflow-hidden rounded-2xl bg-gradient-to-r from-[#312E81] via-[#4338CA] to-[#6366F1] px-5 py-6 text-white shadow-lg shadow-indigo-200 sm:px-8">
+        {/* Full Width SVG Background */}
+        <svg
+          className="pointer-events-none absolute inset-0 -z-10 h-full w-full"
+          viewBox="0 0 1440 240"
+          preserveAspectRatio="none"
+          fill="none"
+          aria-hidden="true"
+        >
+          {/* Top Wave */}
+          <path
+            d="M700 0C880 170 1080 -30 1440 70V0H700Z"
+            fill="#A5B4FC"
+            fillOpacity="0.15"
+          />
+
+          {/* Bottom Waves */}
+          <path
+            d="M450 240C700 60 950 280 1180 130C1300 55 1380 100 1440 80V240H450Z"
+            fill="#A5B4FC"
+            fillOpacity="0.16"
+          />
+
+          <path
+            d="M650 240C850 120 1050 260 1220 160C1330 100 1390 145 1440 125V240H650Z"
+            fill="#C7D2FE"
+            fillOpacity="0.15"
+          />
+
+          {/* Decorative Lines */}
+          <path
+            d="M750 0C850 180 1150 20 1440 110"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          <path
+            d="M650 240C850 80 1100 270 1440 120"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          {/* Decorative Circles */}
+          <circle
+            cx="1280"
+            cy="120"
+            r="110"
+            stroke="white"
+            strokeOpacity="0.1"
+          />
+
+          <circle cx="1280" cy="120" r="90" fill="white" fillOpacity="0.05" />
+
+          <circle cx="80" cy="20" r="130" fill="white" fillOpacity="0.025" />
+        </svg>
+
+        {/* College Campus SVG Illustration */}
+        <div className="pointer-events-none absolute inset-y-0 right-6 hidden w-[32%] max-w-[340px] items-center justify-center md:flex lg:right-12">
+          <svg
+            viewBox="0 0 340 220"
+            className="h-auto max-h-[190px] w-full"
+            fill="none"
+            aria-hidden="true"
+          >
+            {/* Background Rings */}
+            <circle
+              cx="175"
+              cy="110"
+              r="103"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+
+            <circle cx="175" cy="110" r="85" fill="white" fillOpacity="0.06" />
+
+            {/* Campus Ground Shadow */}
+            <ellipse
+              cx="170"
+              cy="202"
+              rx="145"
+              ry="10"
+              fill="#312E81"
+              fillOpacity="0.2"
+            />
+
+            {/* Left College Building */}
+            <rect
+              x="35"
+              y="100"
+              width="100"
+              height="88"
+              rx="3"
+              fill="#C7D2FE"
+            />
+
+            {/* Left Building Roof */}
+            <path d="M27 100L85 64L143 100H27Z" fill="#A5B4FC" />
+
+            {/* Right College Building */}
+            <rect
+              x="205"
+              y="100"
+              width="100"
+              height="88"
+              rx="3"
+              fill="#C7D2FE"
+            />
+
+            {/* Right Building Roof */}
+            <path d="M197 100L255 64L313 100H197Z" fill="#A5B4FC" />
+
+            {/* Side Building Windows */}
+            {[48, 76, 104, 218, 246, 274].map((x) =>
+              [113, 148].map((y) => (
+                <g key={`${x}-${y}`}>
+                  <rect
+                    x={x}
+                    y={y}
+                    width="19"
+                    height="25"
+                    rx="3"
+                    fill="#818CF8"
+                  />
+
+                  <path
+                    d={`M${x + 9.5} ${y}V${y + 25}
+                  M${x} ${y + 12.5}H${x + 19}`}
+                    stroke="#E0E7FF"
+                    strokeWidth="1.5"
+                  />
+                </g>
+              )),
+            )}
+
+            {/* Main College Building */}
+            <rect x="121" y="64" width="98" height="124" fill="#EEF2FF" />
+
+            {/* Main Building Roof */}
+            <path d="M109 64L170 20L231 64H109Z" fill="#FFFFFF" />
+
+            {/* Inner Roof Decoration */}
+            <path d="M133 56L170 30L207 56H133Z" fill="#C7D2FE" />
+
+            {/* College Flag */}
+            <path
+              d="M170 20V2"
+              stroke="#FFFFFF"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            <path d="M170 3L196 9L170 16V3Z" fill="#FDE68A" />
+
+            {/* College Clock */}
+            <circle cx="170" cy="82" r="15" fill="#C7D2FE" />
+
+            <circle cx="170" cy="82" r="11" fill="#FFFFFF" />
+
+            <path
+              d="M170 75V82L176 86"
+              stroke="#4338CA"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+
+            {/* Building Horizontal Border */}
+            <rect
+              x="117"
+              y="101"
+              width="106"
+              height="7"
+              rx="2"
+              fill="#A5B4FC"
+            />
+
+            {/* College Pillars */}
+            {[127, 201].map((x) => (
+              <g key={x}>
+                <rect
+                  x={x - 3}
+                  y="108"
+                  width="16"
+                  height="6"
+                  rx="2"
+                  fill="#C7D2FE"
+                />
+
+                <rect
+                  x={x}
+                  y="114"
+                  width="10"
+                  height="66"
+                  rx="2"
+                  fill="#FFFFFF"
+                />
+
+                <rect
+                  x={x - 3}
+                  y="180"
+                  width="16"
+                  height="8"
+                  rx="2"
+                  fill="#C7D2FE"
+                />
+              </g>
+            ))}
+
+            {/* Main College Entrance */}
+            <path
+              d="M148 188V143
+           C148 114 192 114 192 143
+           V188H148Z"
+              fill="#6366F1"
+            />
+
+            {/* Entrance Door */}
+            <path
+              d="M154 188V145
+           C154 123 186 123 186 145
+           V188H154Z"
+              fill="#4338CA"
+            />
+
+            <path d="M170 132V188" stroke="#A5B4FC" strokeWidth="2" />
+
+            {/* Door Handles */}
+            <circle cx="164" cy="163" r="2" fill="#FDE68A" />
+            <circle cx="176" cy="163" r="2" fill="#FDE68A" />
+
+            {/* College Staircase */}
+            <rect x="35" y="188" width="270" height="7" rx="3" fill="#A5B4FC" />
+
+            <rect x="25" y="195" width="290" height="7" rx="3" fill="#C7D2FE" />
+
+            <rect
+              x="15"
+              y="202"
+              width="310"
+              height="5"
+              rx="2.5"
+              fill="#E0E7FF"
+            />
+
+            {/* Campus Trees */}
+            {[22, 318].map((x) => (
+              <g key={x}>
+                <path
+                  d={`M${x} 185V140`}
+                  stroke="#C7D2FE"
+                  strokeWidth="5"
+                  strokeLinecap="round"
+                />
+
+                <ellipse cx={x} cy="138" rx="15" ry="28" fill="#818CF8" />
+
+                <ellipse cx={x - 5} cy="132" rx="10" ry="21" fill="#A5B4FC" />
+
+                <ellipse cx={x + 6} cy="142" rx="10" ry="19" fill="#C7D2FE" />
+              </g>
+            ))}
+
+            {/* Floating Graduation Cap Card */}
+            <rect x="10" y="10" width="82" height="64" rx="14" fill="#FFFFFF" />
+
+            {/* Graduation Cap */}
+            <path d="M21 34L51 19L81 34L51 49L21 34Z" fill="#6366F1" />
+
+            <path
+              d="M32 40V54
+           C42 64 60 64 70 54
+           V40L51 49Z"
+              fill="#4338CA"
+            />
+
+            {/* Graduation Tassel */}
+            <path
+              d="M51 34L81 38V55"
+              stroke="#FBBF24"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            <path d="M81 51L76 63H86L81 51Z" fill="#FBBF24" />
+
+            {/* Floating College Selection Checklist */}
+            <rect x="252" y="8" width="76" height="94" rx="12" fill="#FFFFFF" />
+
+            {/* Checklist Heading */}
+            <rect x="264" y="19" width="52" height="6" rx="3" fill="#6366F1" />
+
+            {/* Checklist Items */}
+            {[35, 55, 75].map((y) => (
+              <g key={y}>
+                <rect
+                  x="263"
+                  y={y}
+                  width="16"
+                  height="16"
+                  rx="4"
+                  fill="#E0E7FF"
+                />
+
+                <path
+                  d={`M267 ${y + 8}L270 ${y + 11}L276 ${y + 4}`}
+                  stroke="#4338CA"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+
+                <path
+                  d={`M286 ${y + 5}H315`}
+                  stroke="#818CF8"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
+
+                <path
+                  d={`M286 ${y + 12}H307`}
+                  stroke="#C7D2FE"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+              </g>
+            ))}
+
+            {/* Decorative Sparkles */}
+            <path
+              d="M108 15V29M101 22H115
+           M235 24V38M228 31H242
+           M12 88V102M5 95H19"
+              stroke="#C7D2FE"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            {/* Decorative Dots */}
+            <circle cx="108" cy="48" r="4" fill="#A5B4FC" />
+            <circle cx="223" cy="12" r="3" fill="#C7D2FE" />
+            <circle cx="329" cy="112" r="4" fill="#A5B4FC" />
+          </svg>
+        </div>
+
+        {/* College Selection Content */}
+        <div className="relative z-10 w-full min-w-0 md:max-w-[60%]">
+          {/* Section Label */}
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5">
+            <span className="h-2 w-2 rounded-full bg-indigo-300" />
+
+            <span className="text-[11px] font-semibold uppercase tracking-widest text-indigo-100">
+              ISST · College Management
+            </span>
+          </div>
+
+          {/* Heading */}
+          <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
+            College Selection
+          </h1>
+
+          {/* Description */}
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-indigo-100 sm:text-base">
             Manage and organize college selection
           </p>
+
+          {/* Add New Button */}
+          <button
+            type="button"
+            onClick={() => {
+              setEdit(null);
+              setShow(true);
+            }}
+            className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-[#4338CA] shadow-md transition-all duration-200 hover:bg-indigo-50 active:scale-95"
+          >
+            <Plus size={18} />
+            Add new
+          </button>
         </div>
-        <button
-          className="btn-primary"
-          onClick={() => {
-            setEdit(null);
-            setShow(true);
-          }}
-        >
-          <Plus size={18} />
-          Add new
-        </button>
       </div>
       <div className="panel">
         <div className="flex flex-wrap justify-between items-center gap-3 mb-5">

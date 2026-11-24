@@ -124,23 +124,343 @@ export default function AllCareerRoutes() {
   }
   return (
     <>
-      <div className="section-hero hero-career-route-map flex flex-wrap items-end justify-between gap-4 mb-7">
-        <div>
-          <h1 className="text-3xl font-bold">{"Career Route Map"}</h1>
-          <p className="text-indigo-100 mt-2">
+      <div className="relative isolate mb-7 flex min-h-[200px] w-full items-center overflow-hidden rounded-2xl bg-gradient-to-r from-[#312E81] via-[#4338CA] to-[#6366F1] px-5 py-6 text-white shadow-lg shadow-indigo-200 sm:px-8">
+        {/* Full Width SVG Background */}
+        <svg
+          className="pointer-events-none absolute inset-0 -z-10 h-full w-full"
+          viewBox="0 0 1440 240"
+          preserveAspectRatio="none"
+          fill="none"
+          aria-hidden="true"
+        >
+          {/* Top Wave */}
+          <path
+            d="M700 0C880 170 1080 -30 1440 70V0H700Z"
+            fill="#A5B4FC"
+            fillOpacity="0.15"
+          />
+
+          {/* Bottom Waves */}
+          <path
+            d="M450 240C700 60 950 280 1180 130C1300 55 1380 100 1440 80V240H450Z"
+            fill="#A5B4FC"
+            fillOpacity="0.16"
+          />
+
+          <path
+            d="M650 240C850 120 1050 260 1220 160C1330 100 1390 145 1440 125V240H650Z"
+            fill="#C7D2FE"
+            fillOpacity="0.15"
+          />
+
+          {/* Decorative Lines */}
+          <path
+            d="M750 0C850 180 1150 20 1440 110"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          <path
+            d="M650 240C850 80 1100 270 1440 120"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          {/* Decorative Circles */}
+          <circle
+            cx="1280"
+            cy="120"
+            r="110"
+            stroke="white"
+            strokeOpacity="0.1"
+          />
+
+          <circle cx="1280" cy="120" r="90" fill="white" fillOpacity="0.05" />
+
+          <circle cx="80" cy="20" r="130" fill="white" fillOpacity="0.025" />
+        </svg>
+
+        {/* Career Route Map SVG Illustration */}
+        <div className="pointer-events-none absolute inset-y-0 right-6 hidden w-[32%] max-w-[340px] items-center justify-center md:flex lg:right-12">
+          <svg
+            viewBox="0 0 340 220"
+            className="h-auto max-h-[190px] w-full"
+            fill="none"
+            aria-hidden="true"
+          >
+            {/* Background Rings */}
+            <circle
+              cx="175"
+              cy="110"
+              r="103"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+
+            <circle cx="175" cy="110" r="85" fill="white" fillOpacity="0.06" />
+
+            {/* Folded Road Map Shadow */}
+            <path
+              d="M30 65L115 40L205 65L295 40V182L205 207L115 182L30 207Z"
+              fill="#312E81"
+              fillOpacity="0.2"
+            />
+
+            {/* Left Map Panel */}
+            <path d="M25 57L110 32V174L25 199V57Z" fill="#EEF2FF" />
+
+            {/* Center Map Panel */}
+            <path d="M110 32L200 57V199L110 174V32Z" fill="#C7D2FE" />
+
+            {/* Right Map Panel */}
+            <path d="M200 57L290 32V174L200 199V57Z" fill="#EEF2FF" />
+
+            {/* Decorative Map Grid */}
+            <path
+              d="M40 86L95 70
+           M40 112L95 96
+           M40 138L95 122
+           M125 75L185 92
+           M125 105L185 122
+           M125 135L185 152
+           M215 86L275 69
+           M215 116L275 99
+           M215 146L275 129"
+              stroke="#A5B4FC"
+              strokeWidth="2"
+              strokeOpacity="0.55"
+              strokeLinecap="round"
+            />
+
+            {/* Career Route Background */}
+            <path
+              d="M48 165
+           C80 155 55 98 100 96
+           C140 94 123 156 170 153
+           C218 150 190 95 230 85
+           C245 80 250 65 266 62"
+              stroke="#A5B4FC"
+              strokeWidth="17"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+
+            {/* Career Route Dotted Line */}
+            <path
+              d="M48 165
+           C80 155 55 98 100 96
+           C140 94 123 156 170 153
+           C218 150 190 95 230 85
+           C245 80 250 65 266 62"
+              stroke="#4338CA"
+              strokeWidth="3.5"
+              strokeDasharray="6 8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+
+            {/* Career Starting Point */}
+            <circle
+              cx="48"
+              cy="165"
+              r="12"
+              fill="#6366F1"
+              stroke="white"
+              strokeWidth="3"
+            />
+
+            <circle cx="48" cy="165" r="4" fill="white" />
+
+            {/* Education Milestone */}
+            <circle
+              cx="100"
+              cy="96"
+              r="12"
+              fill="#6366F1"
+              stroke="white"
+              strokeWidth="3"
+            />
+
+            <path
+              d="M95 96L99 100L105 92"
+              stroke="white"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+
+            {/* Skill Development Milestone */}
+            <circle
+              cx="170"
+              cy="153"
+              r="12"
+              fill="#6366F1"
+              stroke="white"
+              strokeWidth="3"
+            />
+
+            <path
+              d="M165 153L169 157L175 149"
+              stroke="white"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+
+            {/* Career Milestone */}
+            <circle
+              cx="230"
+              cy="85"
+              r="11"
+              fill="#818CF8"
+              stroke="white"
+              strokeWidth="3"
+            />
+
+            {/* Destination Location Marker */}
+            <path
+              d="M246 46
+           C246 19 286 19 286 46
+           C286 63 266 82 266 82
+           C266 82 246 63 246 46Z"
+              fill="#4338CA"
+              stroke="white"
+              strokeWidth="3"
+            />
+
+            <circle cx="266" cy="45" r="8" fill="white" />
+
+            {/* Floating Graduation Cap Card */}
+            <rect x="10" y="10" width="78" height="63" rx="13" fill="#FFFFFF" />
+
+            {/* Graduation Cap */}
+            <path d="M19 32L49 17L79 32L49 47L19 32Z" fill="#6366F1" />
+
+            <path
+              d="M30 38V51
+           C40 61 58 61 68 51
+           V38L49 47Z"
+              fill="#4338CA"
+            />
+
+            {/* Graduation Tassel */}
+            <path
+              d="M49 32L77 36V52"
+              stroke="#FBBF24"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            <path d="M77 48L72 60H82L77 48Z" fill="#FBBF24" />
+
+            {/* Floating Career Briefcase Card */}
+            <rect
+              x="258"
+              y="139"
+              width="70"
+              height="67"
+              rx="14"
+              fill="#FFFFFF"
+            />
+
+            <rect
+              x="267"
+              y="148"
+              width="52"
+              height="49"
+              rx="10"
+              fill="#EEF2FF"
+            />
+
+            {/* Briefcase Handle */}
+            <path
+              d="M284 162V155H302V162"
+              stroke="#4338CA"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+
+            {/* Briefcase Body */}
+            <rect
+              x="273"
+              y="162"
+              width="40"
+              height="28"
+              rx="5"
+              fill="#6366F1"
+            />
+
+            <path d="M273 173H313" stroke="#C7D2FE" strokeWidth="2" />
+
+            <rect x="289" y="170" width="8" height="7" rx="2" fill="white" />
+
+            {/* Floating Destination Flag */}
+            <rect x="133" y="8" width="57" height="54" rx="12" fill="#FFFFFF" />
+
+            <path
+              d="M148 49V18"
+              stroke="#4338CA"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+
+            <path d="M148 19H176L168 28L176 37H148V19Z" fill="#818CF8" />
+
+            {/* Decorative Sparkles */}
+            <path
+              d="M310 20V36M302 28H318
+           M12 111V125M5 118H19
+           M320 98V112M313 105H327"
+              stroke="#C7D2FE"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            {/* Decorative Dots */}
+            <circle cx="102" cy="13" r="4" fill="#A5B4FC" />
+            <circle cx="218" cy="19" r="3" fill="#C7D2FE" />
+            <circle cx="14" cy="171" r="3" fill="#A5B4FC" />
+            <circle cx="307" cy="66" r="4" fill="#C7D2FE" />
+          </svg>
+        </div>
+
+        {/* Career Route Map Content */}
+        <div className="relative z-10 w-full min-w-0 md:max-w-[60%]">
+          {/* Section Label */}
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5">
+            <span className="h-2 w-2 rounded-full bg-indigo-300" />
+
+            <span className="text-[11px] font-semibold uppercase tracking-widest text-indigo-100">
+              ISST · Career Management
+            </span>
+          </div>
+
+          {/* Heading */}
+          <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
+            Career Route Map
+          </h1>
+
+          {/* Description */}
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-indigo-100 sm:text-base">
             Manage and organize career route map
           </p>
+
+          {/* Add New Button */}
+          <button
+            type="button"
+            onClick={() => {
+              setEdit(null);
+              setShow(true);
+            }}
+            className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-[#4338CA] shadow-md transition-all duration-200 hover:bg-indigo-50 active:scale-95"
+          >
+            <Plus size={18} />
+            Add new
+          </button>
         </div>
-        <button
-          className="btn-primary"
-          onClick={() => {
-            setEdit(null);
-            setShow(true);
-          }}
-        >
-          <Plus size={18} />
-          Add new
-        </button>
       </div>
       <div className="panel">
         <div className="flex flex-wrap justify-between items-center gap-3 mb-5">

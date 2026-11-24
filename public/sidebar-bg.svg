@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 1050" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="paper" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#dce2ff"/><stop offset=".33" stop-color="#f5f6ff"/><stop offset=".69" stop-color="#f9f8ff"/><stop offset="1" stop-color="#e0e8ff"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    <linearGradient id="stone" x2="0" y2="1"><stop stop-color="#c8c9e8"/><stop offset="1" stop-color="#e8e4f2"/></linearGradient>
+    <linearGradient id="roof" x2="0" y2="1"><stop stop-color="#a9b4e2"/><stop offset="1" stop-color="#d1d9f4"/></linearGradient>
+    <linearGradient id="leaf" x2="0" y2="1"><stop stop-color="#b5d5ca"/><stop offset="1" stop-color="#d9e9df"/></linearGradient>
+    <linearGradient id="wave" x2="1" y2=".3"><stop stop-color="#c3ccf9"/><stop offset="1" stop-color="#dce7ff"/></linearGradient>
+    <g id="window"><rect width="13" height="27" rx="6.5" fill="#a8b3d8"/><path d="M6.5 3v21M2 13.5h9" stroke="#edf0fb" stroke-width="1.2"/></g>
+    <g id="tree"><path d="M0 0v-62" stroke="#a9bcb8" stroke-width="3"/><ellipse cx="-11" cy="-42" rx="17" ry="28" transform="rotate(-18 -11 -42)" fill="url(#leaf)"/><ellipse cx="13" cy="-40" rx="17" ry="25" transform="rotate(22 13 -40)" fill="#c5dfd5"/><ellipse cy="-65" rx="15" ry="26" fill="#c2dacf"/></g>
+  </defs>
+  <rect width="300" height="1050" fill="url(#paper)"/>
+  <ellipse cx="130" cy="420" rx="250" ry="410" fill="url(#glow)"/>
+  <circle cx="291" cy="-10" r="106" fill="#a5b4fc" opacity=".18"/>
+  <circle cx="300" cy="-10" r="143" fill="none" stroke="#a5b4fc" stroke-width="2.5" opacity=".27"/>
+  <circle cx="300" cy="-10" r="177" fill="none" stroke="#b9c5fd" stroke-width="1.5" opacity=".23"/>
+  <circle cx="-56" cy="470" r="91" fill="#e0e7ff" opacity=".4"/>
+  <circle cx="333" cy="610" r="83" fill="#e2e7fd" opacity=".55"/>
+  <g fill="#a5b4fc" opacity=".35"><circle cx="245" cy="180" r="5"/><circle cx="32" cy="377" r="4"/><circle cx="270" cy="536" r="5"/><circle cx="51" cy="670" r="6"/><circle cx="216" cy="62" r="7"/></g>
+  <!-- Soft hills and campus illustration -->
+  <path d="M0 780Q62 727 125 787T300 752V985H0Z" fill="#e4e9fa"/>
+  <path d="M0 819Q65 766 151 816T300 797V978H0Z" fill="#dce6f1"/>
+  <g opacity=".78">
+    <use href="#tree" transform="translate(16 903) scale(.95)"/><use href="#tree" transform="translate(282 901) scale(1.2)"/>
+    <path d="M22 796h256v115H22z" fill="#e6e4f1" stroke="#c3cbe5" stroke-width="1.4"/>
+    <path d="M17 796l47-32 42 32zM194 796l42-32 47 32z" fill="url(#roof)"/>
+    <path d="M20 812h260v5H20zM20 881h260v5H20z" fill="#c4cce5"/>
+    <g><use href="#window" x="36" y="829"/><use href="#window" x="58" y="829"/><use href="#window" x="80" y="829"/><use href="#window" x="207" y="829"/><use href="#window" x="229" y="829"/><use href="#window" x="251" y="829"/></g>
+    <rect x="101" y="752" width="98" height="159" rx="2" fill="url(#stone)" stroke="#bac4e1" stroke-width="1.5"/>
+    <path d="M94 753l56-49 56 49z" fill="url(#roof)" stroke="#b2bde0" stroke-width="1.5"/>
+    <path d="M150 706v-29" stroke="#a2afd4" stroke-width="2"/><path d="M151 678q14-5 28 2v13q-14-7-28-2z" fill="#a5b4fc"/>
+    <circle cx="150" cy="772" r="13" fill="#f4f5fd" stroke="#adb9dc" stroke-width="2"/><path d="M150 763v10l6 4" fill="none" stroke="#a2aed3" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M108 793h84v5h-84z" fill="#bdc7e4"/>
+    <g fill="#f4f2fa" stroke="#bcc5de" stroke-width="1"><rect x="110" y="801" width="10" height="95" rx="2"/><rect x="180" y="801" width="10" height="95" rx="2"/><rect x="125" y="801" width="7" height="95" rx="2"/><rect x="168" y="801" width="7" height="95" rx="2"/></g>
+    <path d="M136 901v-52a14 14 0 0 1 28 0v52z" fill="#aeb9d9"/><path d="M150 837v64" stroke="#e9edf9" stroke-width="1.5"/>
+    <path d="M93 902h114v6H93zM86 909h128v6H86zM79 916h142v5H79z" fill="#c7cee5"/>
+    <use href="#tree" transform="translate(32 931) scale(.7)"/><use href="#tree" transform="translate(266 925) scale(.75)"/>
+  </g>
+  <path d="M0 919Q50 876 106 928T220 948Q265 920 300 912V1050H0Z" fill="#dbe8e7"/>
+  <path d="M0 941Q74 901 149 957T300 940V1050H0Z" fill="url(#wave)" opacity=".8"/>
+  <path d="M0 970Q79 923 155 978T300 963V1050H0Z" fill="#f3f5ff" opacity=".9"/>
+  <path d="M0 992Q70 948 151 1000T300 980V1050H0Z" fill="#c5d1f7" opacity=".65"/>
+  <path d="M0 1020Q82 973 173 1023T300 1008V1050H0Z" fill="#e0e7ff"/>
+</svg>

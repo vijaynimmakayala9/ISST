@@ -124,23 +124,310 @@ export default function AllCourseSelections() {
   }
   return (
     <>
-      <div className="section-hero hero-course-selection flex flex-wrap items-end justify-between gap-4 mb-7">
-        <div>
-          <h1 className="text-3xl font-bold">{"Course Selection"}</h1>
-          <p className="text-indigo-100 mt-2">
+      <div className="relative isolate mb-7 flex min-h-[200px] w-full items-center overflow-hidden rounded-2xl bg-gradient-to-r from-[#312E81] via-[#4338CA] to-[#6366F1] px-5 py-6 text-white shadow-lg shadow-indigo-200 sm:px-8">
+        {/* Full Width SVG Background */}
+        <svg
+          className="pointer-events-none absolute inset-0 -z-10 h-full w-full"
+          viewBox="0 0 1440 240"
+          preserveAspectRatio="none"
+          fill="none"
+          aria-hidden="true"
+        >
+          {/* Top Wave */}
+          <path
+            d="M700 0C880 170 1080 -30 1440 70V0H700Z"
+            fill="#A5B4FC"
+            fillOpacity="0.15"
+          />
+
+          {/* Bottom Waves */}
+          <path
+            d="M450 240C700 60 950 280 1180 130C1300 55 1380 100 1440 80V240H450Z"
+            fill="#A5B4FC"
+            fillOpacity="0.16"
+          />
+
+          <path
+            d="M650 240C850 120 1050 260 1220 160C1330 100 1390 145 1440 125V240H650Z"
+            fill="#C7D2FE"
+            fillOpacity="0.15"
+          />
+
+          {/* Decorative Lines */}
+          <path
+            d="M750 0C850 180 1150 20 1440 110"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          <path
+            d="M650 240C850 80 1100 270 1440 120"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          {/* Decorative Circles */}
+          <circle
+            cx="1280"
+            cy="120"
+            r="110"
+            stroke="white"
+            strokeOpacity="0.1"
+          />
+
+          <circle cx="1280" cy="120" r="90" fill="white" fillOpacity="0.05" />
+
+          <circle cx="80" cy="20" r="130" fill="white" fillOpacity="0.025" />
+        </svg>
+
+        {/* Course Selection SVG Illustration */}
+        <div className="pointer-events-none absolute inset-y-0 right-6 hidden w-[32%] max-w-[340px] items-center justify-center md:flex lg:right-12">
+          <svg
+            viewBox="0 0 340 220"
+            className="h-auto max-h-[190px] w-full"
+            fill="none"
+            aria-hidden="true"
+          >
+            {/* Background Rings */}
+            <circle
+              cx="175"
+              cy="110"
+              r="103"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+
+            <circle cx="175" cy="110" r="85" fill="white" fillOpacity="0.06" />
+
+            {/* Floating Course Selection Card */}
+            <g transform="rotate(8 260 90)">
+              <rect
+                x="208"
+                y="18"
+                width="112"
+                height="150"
+                rx="12"
+                fill="#FFFFFF"
+              />
+
+              {/* Card Heading */}
+              <rect
+                x="223"
+                y="31"
+                width="80"
+                height="7"
+                rx="3.5"
+                fill="#6366F1"
+              />
+
+              <rect
+                x="223"
+                y="44"
+                width="50"
+                height="4"
+                rx="2"
+                fill="#A5B4FC"
+              />
+
+              {/* Course Selection Rows */}
+              {[60, 85, 110, 135].map((y) => (
+                <g key={y}>
+                  <rect
+                    x="221"
+                    y={y}
+                    width="86"
+                    height="20"
+                    rx="5"
+                    fill="#EEF2FF"
+                  />
+
+                  <rect
+                    x="226"
+                    y={y + 3}
+                    width="14"
+                    height="14"
+                    rx="4"
+                    fill="#C7D2FE"
+                  />
+
+                  <path
+                    d={`M229 ${y + 10}L232 ${y + 13}L237 ${y + 6}`}
+                    stroke="#4338CA"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+
+                  <path
+                    d={`M248 ${y + 8}H297`}
+                    stroke="#818CF8"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+
+                  <path
+                    d={`M248 ${y + 14}H282`}
+                    stroke="#C7D2FE"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                  />
+                </g>
+              ))}
+            </g>
+
+            {/* Open Book Cover */}
+            <path
+              d="M25 90C65 74 110 77 160 101C210 77 255 74 295 90V196C245 178 205 183 160 210C115 183 75 178 25 196V90Z"
+              fill="#818CF8"
+            />
+
+            {/* Left Book Page */}
+            <path
+              d="M34 78C78 65 119 70 160 94V200C119 176 78 171 34 185V78Z"
+              fill="#FFFFFF"
+            />
+
+            {/* Right Book Page */}
+            <path
+              d="M160 94C201 70 242 65 286 78V185C242 171 201 176 160 200V94Z"
+              fill="#EEF2FF"
+            />
+
+            {/* Book Center Line */}
+            <path d="M160 94V200" stroke="#A5B4FC" strokeWidth="2" />
+
+            {/* Left Page Heading */}
+            <path
+              d="M49 97C80 88 113 92 145 108"
+              stroke="#6366F1"
+              strokeWidth="6"
+              strokeLinecap="round"
+            />
+
+            {/* Left Page Content */}
+            <path
+              d="M49 116C80 107 113 111 145 127
+           M49 131C80 122 113 126 145 142
+           M49 146C80 137 113 141 145 157
+           M49 161C80 152 113 156 133 168"
+              stroke="#A5B4FC"
+              strokeWidth="3.5"
+              strokeLinecap="round"
+            />
+
+            {/* Right Page Heading */}
+            <path
+              d="M175 108C207 92 240 88 271 97"
+              stroke="#6366F1"
+              strokeWidth="6"
+              strokeLinecap="round"
+            />
+
+            {/* Right Page Content */}
+            <path
+              d="M175 127C207 111 240 107 271 116
+           M175 142C207 126 240 122 271 131
+           M175 157C207 141 240 137 271 146
+           M175 172C207 156 240 152 260 158"
+              stroke="#A5B4FC"
+              strokeWidth="3.5"
+              strokeLinecap="round"
+            />
+
+            {/* Book Bookmark */}
+            <path d="M249 73L264 72V117L256.5 110L249 119V73Z" fill="#6366F1" />
+
+            {/* Floating Graduation Cap Card */}
+            <rect x="16" y="14" width="86" height="68" rx="14" fill="#FFFFFF" />
+
+            {/* Graduation Cap */}
+            <path d="M28 39L59 23L90 39L59 55L28 39Z" fill="#6366F1" />
+
+            <path d="M39 45V59C49 68 69 68 79 59V45L59 55Z" fill="#4338CA" />
+
+            {/* Graduation Tassel */}
+            <path
+              d="M59 39L90 42V60"
+              stroke="#FBBF24"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            <path d="M90 56L85 67H95L90 56Z" fill="#FBBF24" />
+
+            {/* Floating Selection Confirmation */}
+            <rect
+              x="273"
+              y="151"
+              width="55"
+              height="55"
+              rx="14"
+              fill="#FFFFFF"
+            />
+
+            <circle cx="300.5" cy="178.5" r="18" fill="#E0E7FF" />
+
+            <path
+              d="M291 178L298 185L311 171"
+              stroke="#4338CA"
+              strokeWidth="4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+
+            {/* Decorative Sparkles */}
+            <path
+              d="M130 15V31M122 23H138
+           M15 120V134M8 127H22
+           M324 94V108M317 101H331"
+              stroke="#C7D2FE"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            {/* Decorative Dots */}
+            <circle cx="174" cy="20" r="4" fill="#A5B4FC" />
+            <circle cx="15" cy="181" r="3" fill="#C7D2FE" />
+            <circle cx="190" cy="48" r="4" fill="#A5B4FC" />
+          </svg>
+        </div>
+
+        {/* Course Selection Content */}
+        <div className="relative z-10 w-full min-w-0 md:max-w-[60%]">
+          {/* Section Label */}
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5">
+            <span className="h-2 w-2 rounded-full bg-indigo-300" />
+
+            <span className="text-[11px] font-semibold uppercase tracking-widest text-indigo-100">
+              ISST · Course Management
+            </span>
+          </div>
+
+          {/* Heading */}
+          <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
+            Course Selection
+          </h1>
+
+          {/* Description */}
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-indigo-100 sm:text-base">
             Manage and organize course selection
           </p>
+
+          {/* Add New Button */}
+          <button
+            type="button"
+            onClick={() => {
+              setEdit(null);
+              setShow(true);
+            }}
+            className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-[#4338CA] shadow-md transition-all duration-200 hover:bg-indigo-50 active:scale-95"
+          >
+            <Plus size={18} />
+            Add new
+          </button>
         </div>
-        <button
-          className="btn-primary"
-          onClick={() => {
-            setEdit(null);
-            setShow(true);
-          }}
-        >
-          <Plus size={18} />
-          Add new
-        </button>
       </div>
       <div className="panel">
         <div className="flex flex-wrap justify-between items-center gap-3 mb-5">

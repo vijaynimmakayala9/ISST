@@ -151,28 +151,606 @@ export default function AllEducationLoans() {
   const selected = tab === "categories" ? categories : loading ? [] : rows;
   return (
     <div className="space-y-6">
-      <div
-        className={`section-hero ${tab === "categories" ? "hero-education-loans-categories" : "hero-education-loans"} flex flex-wrap justify-between items-end gap-3`}
-      >
-        <div>
-          <h1 className="text-3xl font-bold text-white">
+      <div className="relative isolate flex min-h-[200px] w-full items-center justify-between gap-6 overflow-hidden rounded-2xl bg-gradient-to-r from-[#312E81] via-[#4338CA] to-[#6366F1] px-5 py-6 text-white shadow-lg shadow-indigo-200 sm:px-8">
+        {/* Full Width SVG Background */}
+        <svg
+          className="pointer-events-none absolute inset-0 -z-10 h-full w-full"
+          viewBox="0 0 1440 240"
+          preserveAspectRatio="none"
+          fill="none"
+          aria-hidden="true"
+        >
+          {/* Top Wave */}
+          <path
+            d="M700 0C880 170 1080 -30 1440 70V0H700Z"
+            fill="#A5B4FC"
+            fillOpacity="0.15"
+          />
+
+          {/* Bottom Waves */}
+          <path
+            d="M450 240C700 60 950 280 1180 130C1300 55 1380 100 1440 80V240H450Z"
+            fill="#A5B4FC"
+            fillOpacity="0.16"
+          />
+
+          <path
+            d="M650 240C850 120 1050 260 1220 160C1330 100 1390 145 1440 125V240H650Z"
+            fill="#C7D2FE"
+            fillOpacity="0.15"
+          />
+
+          {/* Decorative Lines */}
+          <path
+            d="M750 0C850 180 1150 20 1440 110"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          <path
+            d="M650 240C850 80 1100 270 1440 120"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          {/* Decorative Circles */}
+          <circle
+            cx="1280"
+            cy="120"
+            r="110"
+            stroke="white"
+            strokeOpacity="0.1"
+          />
+
+          <circle cx="1280" cy="120" r="90" fill="white" fillOpacity="0.05" />
+
+          <circle cx="80" cy="20" r="130" fill="white" fillOpacity="0.025" />
+        </svg>
+
+        {/* Education Loan Content */}
+        <div className="relative z-10 min-w-0 flex-1">
+          {/* Section Label */}
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5">
+            <span className="h-2 w-2 shrink-0 rounded-full bg-indigo-300" />
+
+            <span className="text-[11px] font-semibold uppercase tracking-widest text-indigo-100">
+              ISST · Education Loan Management
+            </span>
+          </div>
+
+          {/* Dynamic Heading */}
+          <h1 className="break-words text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
             {tab === "categories" ? "Loan Categories" : title}
           </h1>
-          <p className="mt-1 text-indigo-100">
+
+          {/* Dynamic Description */}
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-indigo-100 sm:text-base">
             {tab === "categories"
               ? "Create and organize categories."
               : `Manage ${title.toLowerCase()}.`}
           </p>
+
+          {/* Dynamic Add Button */}
+          <button
+            type="button"
+            onClick={() =>
+              setEditing({
+                category: tab === "categories",
+                item: null,
+              })
+            }
+            className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-[#4338CA] shadow-md transition-all duration-200 hover:bg-indigo-50 active:scale-95"
+          >
+            <Plus size={18} />
+
+            {tab === "categories" ? "Add category" : "Add education loan"}
+          </button>
         </div>
-        <button
-          className="btn-primary"
-          onClick={() =>
-            setEditing({ category: tab === "categories", item: null })
-          }
-        >
-          <Plus size={17} />
-          {tab === "categories" ? "Add category" : "Add education loan"}
-        </button>
+
+        {/* Dynamic SVG Illustration */}
+        <div className="pointer-events-none relative hidden w-[32%] max-w-[340px] shrink-0 items-center justify-center md:flex">
+          <svg
+            viewBox="0 0 340 220"
+            className="h-auto max-h-[190px] w-full"
+            fill="none"
+            aria-hidden="true"
+          >
+            {/* Background Rings */}
+            <circle
+              cx="175"
+              cy="110"
+              r="103"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+
+            <circle cx="175" cy="110" r="85" fill="white" fillOpacity="0.06" />
+
+            {tab === "categories" ? (
+              <>
+                {/* =====================================
+              LOAN CATEGORIES ILLUSTRATION
+          ===================================== */}
+
+                {/* Rear Folder */}
+                <path
+                  d="M72 45H145L165 65H282Q294 65 294 77V173Q294 185 282 185H72Q60 185 60 173V57Q60 45 72 45Z"
+                  fill="#A5B4FC"
+                />
+
+                {/* First Financial Document */}
+                <g transform="rotate(-9 130 100)">
+                  <rect
+                    x="80"
+                    y="24"
+                    width="105"
+                    height="140"
+                    rx="10"
+                    fill="#EEF2FF"
+                  />
+
+                  {/* Document Rupee Symbol */}
+                  <circle cx="132" cy="53" r="17" fill="#C7D2FE" />
+
+                  <path
+                    d="M123 44H142M123 50H142M123 44H129C143 44 143 58 123 58L139 69"
+                    stroke="#4338CA"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+
+                  {/* Document Lines */}
+                  <path
+                    d="M96 83H169M96 96H169M96 109H155"
+                    stroke="#A5B4FC"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+                </g>
+
+                {/* Second Financial Document */}
+                <g transform="rotate(9 225 95)">
+                  <rect
+                    x="180"
+                    y="27"
+                    width="98"
+                    height="135"
+                    rx="10"
+                    fill="white"
+                  />
+
+                  <path
+                    d="M195 46H263"
+                    stroke="#6366F1"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                  />
+
+                  <path
+                    d="M195 61H263M195 74H251"
+                    stroke="#A5B4FC"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+
+                  {/* Financial Bar Chart */}
+                  <rect
+                    x="196"
+                    y="105"
+                    width="15"
+                    height="32"
+                    rx="4"
+                    fill="#A5B4FC"
+                  />
+
+                  <rect
+                    x="218"
+                    y="94"
+                    width="15"
+                    height="43"
+                    rx="4"
+                    fill="#818CF8"
+                  />
+
+                  <rect
+                    x="240"
+                    y="83"
+                    width="15"
+                    height="54"
+                    rx="4"
+                    fill="#6366F1"
+                  />
+                </g>
+
+                {/* Front Folder */}
+                <path
+                  d="M49 100Q50 89 63 89H291Q305 89 303 103L287 190Q285 201 272 201H70Q57 201 55 188L39 108Q38 100 49 100Z"
+                  fill="#C7D2FE"
+                />
+
+                {/* Folder Highlight */}
+                <path
+                  d="M53 106H289"
+                  stroke="#EEF2FF"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+
+                {/* Category Grid Container */}
+                <rect
+                  x="109"
+                  y="117"
+                  width="125"
+                  height="66"
+                  rx="12"
+                  fill="#EEF2FF"
+                />
+
+                {/* Category Cards */}
+                {[
+                  [120, 127],
+                  [177, 127],
+                  [120, 153],
+                  [177, 153],
+                ].map(([x, y]) => (
+                  <g key={`${x}-${y}`}>
+                    <rect
+                      x={x}
+                      y={y}
+                      width="46"
+                      height="20"
+                      rx="5"
+                      fill="#818CF8"
+                    />
+
+                    <path
+                      d={`M${x + 10} ${y + 10}H${x + 36}`}
+                      stroke="white"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                  </g>
+                ))}
+
+                {/* Floating Category Icon */}
+                <rect
+                  x="10"
+                  y="17"
+                  width="70"
+                  height="66"
+                  rx="14"
+                  fill="white"
+                />
+
+                {[
+                  [22, 29],
+                  [48, 29],
+                  [22, 55],
+                  [48, 55],
+                ].map(([x, y]) => (
+                  <rect
+                    key={`${x}-${y}`}
+                    x={x}
+                    y={y}
+                    width="19"
+                    height="19"
+                    rx="5"
+                    fill="#6366F1"
+                  />
+                ))}
+
+                {/* Floating Rupee Coin */}
+                <circle
+                  cx="290"
+                  cy="166"
+                  r="35"
+                  fill="#FBBF24"
+                  stroke="#FDE68A"
+                  strokeWidth="5"
+                />
+
+                <circle
+                  cx="290"
+                  cy="166"
+                  r="25"
+                  stroke="#F59E0B"
+                  strokeWidth="2"
+                />
+
+                <path
+                  d="M277 151H304
+               M277 159H304
+               M277 151H287
+               C306 151 306 174 277 174
+               L300 187"
+                  stroke="#92400E"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </>
+            ) : (
+              <>
+                {/* =====================================
+              EDUCATION LOANS ILLUSTRATION
+          ===================================== */}
+
+                {/* Financial Loan Document */}
+                <g transform="rotate(10 265 100)">
+                  <rect
+                    x="218"
+                    y="25"
+                    width="102"
+                    height="150"
+                    rx="11"
+                    fill="#FFFFFF"
+                  />
+
+                  <rect
+                    x="230"
+                    y="38"
+                    width="78"
+                    height="8"
+                    rx="4"
+                    fill="#6366F1"
+                  />
+
+                  {/* Loan Document Fields */}
+                  {[60, 80, 100, 120].map((y) => (
+                    <g key={y}>
+                      <rect
+                        x="230"
+                        y={y}
+                        width="13"
+                        height="13"
+                        rx="3"
+                        fill="#E0E7FF"
+                      />
+
+                      <path
+                        d={`M248 ${y + 6}H307`}
+                        stroke="#A5B4FC"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                      />
+                    </g>
+                  ))}
+
+                  {/* Loan Approval Mark */}
+                  <circle cx="270" cy="148" r="15" fill="#DCFCE7" />
+
+                  <path
+                    d="M263 148L268 153L278 142"
+                    stroke="#16A34A"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </g>
+
+                {/* Bank Building Shadow */}
+                <ellipse
+                  cx="145"
+                  cy="202"
+                  rx="126"
+                  ry="10"
+                  fill="#312E81"
+                  fillOpacity="0.2"
+                />
+
+                {/* Bank Building Roof */}
+                <path d="M25 78L145 15L265 78H25Z" fill="#FFFFFF" />
+
+                {/* Inner Roof */}
+                <path d="M55 67L145 29L235 67H55Z" fill="#C7D2FE" />
+
+                {/* Bank Rupee Emblem */}
+                <circle cx="145" cy="53" r="19" fill="#6366F1" />
+
+                <path
+                  d="M135 42H155
+               M135 48H155
+               M135 42H141
+               C156 42 156 57 135 57
+               L153 68"
+                  stroke="white"
+                  strokeWidth="2.7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+
+                {/* Bank Roof Border */}
+                <rect
+                  x="35"
+                  y="78"
+                  width="220"
+                  height="12"
+                  rx="3"
+                  fill="#A5B4FC"
+                />
+
+                {/* Bank Main Structure */}
+                <rect x="48" y="90" width="194" height="84" fill="#818CF8" />
+
+                {/* Bank Pillars */}
+                {[58, 105, 152, 199].map((x) => (
+                  <g key={x}>
+                    <rect
+                      x={x - 4}
+                      y="90"
+                      width="32"
+                      height="8"
+                      rx="2"
+                      fill="#C7D2FE"
+                    />
+
+                    <rect
+                      x={x}
+                      y="98"
+                      width="24"
+                      height="68"
+                      rx="3"
+                      fill="#EEF2FF"
+                    />
+
+                    <path
+                      d={`M${x + 7} 104V160`}
+                      stroke="#C7D2FE"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+
+                    <rect
+                      x={x - 4}
+                      y="166"
+                      width="32"
+                      height="8"
+                      rx="2"
+                      fill="#C7D2FE"
+                    />
+                  </g>
+                ))}
+
+                {/* Bank Staircase */}
+                <rect
+                  x="35"
+                  y="174"
+                  width="220"
+                  height="9"
+                  rx="3"
+                  fill="#C7D2FE"
+                />
+
+                <rect
+                  x="25"
+                  y="183"
+                  width="240"
+                  height="9"
+                  rx="3"
+                  fill="#EEF2FF"
+                />
+
+                <rect
+                  x="15"
+                  y="192"
+                  width="260"
+                  height="8"
+                  rx="3"
+                  fill="#A5B4FC"
+                />
+
+                {/* Floating Graduation Cap Card */}
+                <rect
+                  x="10"
+                  y="10"
+                  width="78"
+                  height="62"
+                  rx="14"
+                  fill="white"
+                />
+
+                {/* Graduation Cap */}
+                <path d="M19 32L49 17L79 32L49 47Z" fill="#6366F1" />
+
+                <path
+                  d="M30 38V51
+               C40 61 58 61 68 51
+               V38L49 47Z"
+                  fill="#4338CA"
+                />
+
+                {/* Graduation Tassel */}
+                <path
+                  d="M49 32L79 36V53"
+                  stroke="#FBBF24"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+
+                <path d="M79 49L74 61H84L79 49Z" fill="#FBBF24" />
+
+                {/* Rear Coin */}
+                <circle
+                  cx="260"
+                  cy="176"
+                  r="28"
+                  fill="#F59E0B"
+                  stroke="#FDE68A"
+                  strokeWidth="4"
+                />
+
+                {/* Main Rupee Coin */}
+                <circle
+                  cx="290"
+                  cy="163"
+                  r="37"
+                  fill="#FBBF24"
+                  stroke="#FDE68A"
+                  strokeWidth="5"
+                />
+
+                <circle
+                  cx="290"
+                  cy="163"
+                  r="27"
+                  stroke="#F59E0B"
+                  strokeWidth="2"
+                />
+
+                {/* Rupee Symbol Using SVG Paths */}
+                <path
+                  d="M276 147H304
+               M276 155H304
+               M276 147H286
+               C306 147 306 170 276 170
+               L300 184"
+                  stroke="#92400E"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+
+                {/* Floating Approved Loan Card */}
+                <rect
+                  x="269"
+                  y="9"
+                  width="59"
+                  height="55"
+                  rx="13"
+                  fill="white"
+                />
+
+                <circle cx="298.5" cy="36.5" r="19" fill="#DCFCE7" />
+
+                <path
+                  d="M289 36L296 43L309 29"
+                  stroke="#16A34A"
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </>
+            )}
+
+            {/* Common Decorative Sparkles */}
+            <path
+              d="M108 12V26M101 19H115
+           M15 110V124M8 117H22
+           M320 94V108M313 101H327"
+              stroke="#C7D2FE"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            {/* Decorative Dots */}
+            <circle cx="215" cy="13" r="4" fill="#A5B4FC" />
+            <circle cx="20" cy="151" r="3" fill="#C7D2FE" />
+            <circle cx="329" cy="120" r="4" fill="#A5B4FC" />
+          </svg>
+        </div>
       </div>
       <div className="panel">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-5">

@@ -21,11 +21,11 @@
 
 ## Integrated APIs
 
-| Module | Workflow |
-|---|---|
-| Entrance Exams | Updated the existing integration with all documented filters, paginated exam CRUD, category CRUD and dependent education targets. |
-| Education Loans | Category and loan CRUD, rate and amount filters, sorting, numeric and range validation, direct and in-app applications, and document lists. |
-| Admissions | Category and admission CRUD, manual status, courses offered, documents, and separate education targets. |
+| Module              | Workflow                                                                                                                                                  |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Entrance Exams      | Updated the existing integration with all documented filters, paginated exam CRUD, category CRUD and dependent education targets.                         |
+| Education Loans     | Category and loan CRUD, rate and amount filters, sorting, numeric and range validation, direct and in-app applications, and document lists.               |
+| Admissions          | Category and admission CRUD, manual status, courses offered, documents, and separate education targets.                                                   |
 | Placement Trainings | Category and training CRUD, external links, thumbnail previews, indexed multipart video uploads, replacement and removal, and optional education targets. |
 
 ## Verification
@@ -214,5 +214,7 @@ ISST_Admin_Panel_Redesigned/
 ├── README.md
 └── tailwind.config.js
 ```
-#   I S S T  
+
+#   I S S T 
+ 
  

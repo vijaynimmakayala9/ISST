@@ -121,23 +121,313 @@ export default function AllEducationLevels() {
   }
   return (
     <>
-      <div className="section-hero hero-education-levels flex flex-wrap items-end justify-between gap-4 mb-7">
-        <div>
-          <h1 className="text-3xl font-bold">{"Education Levels"}</h1>
-          <p className="text-indigo-100 mt-2">
+      <div className="relative isolate mb-7 flex min-h-[200px] w-full items-center overflow-hidden rounded-2xl bg-gradient-to-r from-[#312E81] via-[#4338CA] to-[#6366F1] px-5 py-6 text-white shadow-lg shadow-indigo-200 sm:px-8">
+        {/* Full Width SVG Background */}
+        <svg
+          className="pointer-events-none absolute inset-0 -z-10 h-full w-full"
+          viewBox="0 0 1440 240"
+          preserveAspectRatio="none"
+          fill="none"
+          aria-hidden="true"
+        >
+          {/* Top Wave */}
+          <path
+            d="M700 0C880 170 1080 -30 1440 70V0H700Z"
+            fill="#A5B4FC"
+            fillOpacity="0.15"
+          />
+
+          {/* Bottom Waves */}
+          <path
+            d="M450 240C700 60 950 280 1180 130C1300 55 1380 100 1440 80V240H450Z"
+            fill="#A5B4FC"
+            fillOpacity="0.16"
+          />
+
+          <path
+            d="M650 240C850 120 1050 260 1220 160C1330 100 1390 145 1440 125V240H650Z"
+            fill="#C7D2FE"
+            fillOpacity="0.15"
+          />
+
+          {/* Decorative Lines */}
+          <path
+            d="M750 0C850 180 1150 20 1440 110"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          <path
+            d="M650 240C850 80 1100 270 1440 120"
+            stroke="white"
+            strokeOpacity="0.12"
+            strokeWidth="1.5"
+          />
+
+          {/* Decorative Circles */}
+          <circle
+            cx="1280"
+            cy="120"
+            r="110"
+            stroke="white"
+            strokeOpacity="0.1"
+          />
+
+          <circle cx="1280" cy="120" r="90" fill="white" fillOpacity="0.05" />
+
+          <circle cx="80" cy="20" r="130" fill="white" fillOpacity="0.025" />
+        </svg>
+
+        {/* Education Levels SVG Illustration */}
+        <div className="pointer-events-none absolute inset-y-0 right-6 hidden w-[32%] max-w-[340px] items-center justify-center md:flex lg:right-12">
+          <svg
+            viewBox="0 0 340 220"
+            className="h-auto max-h-[190px] w-full"
+            fill="none"
+            aria-hidden="true"
+          >
+            {/* Background Rings */}
+            <circle
+              cx="175"
+              cy="110"
+              r="103"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+
+            <circle cx="175" cy="110" r="85" fill="white" fillOpacity="0.06" />
+
+            {/* Certificate */}
+            <g transform="rotate(10 267 110)">
+              <rect
+                x="218"
+                y="42"
+                width="102"
+                height="140"
+                rx="10"
+                fill="#EEF2FF"
+              />
+
+              <rect
+                x="227"
+                y="51"
+                width="84"
+                height="122"
+                rx="6"
+                stroke="#A5B4FC"
+                strokeWidth="2"
+              />
+
+              {/* Certificate Heading */}
+              <path
+                d="M246 65H291"
+                stroke="#6366F1"
+                strokeWidth="5"
+                strokeLinecap="round"
+              />
+
+              {/* Certificate Lines */}
+              <path
+                d="M239 81H299M239 93H299M239 105H285"
+                stroke="#A5B4FC"
+                strokeWidth="4"
+                strokeLinecap="round"
+              />
+
+              {/* Certificate Ribbon */}
+              <path
+                d="M255 140L249 162L264 155L278 163L274 140Z"
+                fill="#818CF8"
+              />
+
+              <circle cx="265" cy="133" r="17" fill="#6366F1" />
+
+              <circle
+                cx="265"
+                cy="133"
+                r="11"
+                stroke="#C7D2FE"
+                strokeWidth="2"
+              />
+
+              <path
+                d="M259 133L263 137L272 128"
+                stroke="white"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </g>
+
+            {/* Bottom Book */}
+            <rect
+              x="40"
+              y="170"
+              width="210"
+              height="32"
+              rx="6"
+              fill="#A5B4FC"
+            />
+
+            <rect
+              x="53"
+              y="176"
+              width="197"
+              height="20"
+              rx="3"
+              fill="#EEF2FF"
+            />
+
+            <path
+              d="M64 182H239M64 190H239"
+              stroke="#C7D2FE"
+              strokeWidth="1.5"
+            />
+
+            {/* Middle Book */}
+            <rect
+              x="62"
+              y="138"
+              width="195"
+              height="32"
+              rx="6"
+              fill="#4338CA"
+            />
+
+            <rect
+              x="76"
+              y="144"
+              width="181"
+              height="20"
+              rx="3"
+              fill="#FFFFFF"
+            />
+
+            <path
+              d="M86 150H247M86 158H247"
+              stroke="#E0E7FF"
+              strokeWidth="1.5"
+            />
+
+            {/* Book Bookmark */}
+            <path d="M221 144H234V171L227.5 165L221 171Z" fill="#818CF8" />
+
+            {/* Top Book */}
+            <rect
+              x="35"
+              y="108"
+              width="200"
+              height="30"
+              rx="6"
+              fill="#818CF8"
+            />
+
+            <rect
+              x="48"
+              y="114"
+              width="187"
+              height="18"
+              rx="3"
+              fill="#EEF2FF"
+            />
+
+            <path
+              d="M58 120H225M58 126H225"
+              stroke="#C7D2FE"
+              strokeWidth="1.5"
+            />
+
+            {/* Graduation Cap Base */}
+            <path
+              d="M84 62V91C111 112 159 112 186 91V62L135 82Z"
+              fill="#A5B4FC"
+            />
+
+            {/* Graduation Cap Top */}
+            <path d="M40 53L135 14L230 53L135 92L40 53Z" fill="#EEF2FF" />
+
+            {/* Graduation Cap Highlight */}
+            <path d="M40 53L135 14L230 53L135 67L40 53Z" fill="#C7D2FE" />
+
+            {/* Cap Button */}
+            <ellipse cx="135" cy="53" rx="7" ry="4" fill="#6366F1" />
+
+            {/* Graduation Tassel */}
+            <path
+              d="M135 53L216 58V96"
+              stroke="#FDE68A"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+
+            <path d="M216 91L209 109H223L216 91Z" fill="#FDE68A" />
+
+            {/* Decorative Stars */}
+            <path
+              d="M25 24V40M17 32H33"
+              stroke="#C7D2FE"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            <path
+              d="M306 12V28M298 20H314"
+              stroke="#C7D2FE"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            <path
+              d="M304 189V203M297 196H311"
+              stroke="#C7D2FE"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+
+            {/* Decorative Dots */}
+            <circle cx="19" cy="94" r="4" fill="#A5B4FC" />
+            <circle cx="197" cy="17" r="3" fill="#C7D2FE" />
+            <circle cx="325" cy="103" r="4" fill="#A5B4FC" />
+            <circle cx="18" cy="183" r="3" fill="#C7D2FE" />
+          </svg>
+        </div>
+
+        {/* Education Levels Content */}
+        <div className="relative z-10 w-full min-w-0 md:max-w-[60%]">
+          {/* Section Label */}
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5">
+            <span className="h-2 w-2 rounded-full bg-indigo-300" />
+
+            <span className="text-[11px] font-semibold uppercase tracking-widest text-indigo-100">
+              ISST · Education Management
+            </span>
+          </div>
+
+          {/* Heading */}
+          <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
+            Education Levels
+          </h1>
+
+          {/* Description */}
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-indigo-100 sm:text-base">
             Manage and organize education levels
           </p>
+
+          {/* Add New Button */}
+          <button
+            type="button"
+            onClick={() => {
+              setEdit(null);
+              setShow(true);
+            }}
+            className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-[#4338CA] shadow-md transition-all duration-200 hover:bg-indigo-50 active:scale-95"
+          >
+            <Plus size={18} />
+            Add new
+          </button>
         </div>
-        <button
-          className="btn-primary"
-          onClick={() => {
-            setEdit(null);
-            setShow(true);
-          }}
-        >
-          <Plus size={18} />
-          Add new
-        </button>
       </div>
       <div className="panel">
         <div className="flex flex-wrap justify-between items-center gap-3 mb-5">
